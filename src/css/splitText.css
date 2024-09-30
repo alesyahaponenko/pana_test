@@ -1,0 +1,39 @@
+.bigBanner .split-line {
+  overflow-y: hidden;
+  line-height: 0.9;
+  transform: translate(0px, 150px);
+}
+.bigBanner .split-line:nth-child(2) {
+  margin-top: 1.6rem;
+}
+.bigBanner .split-line:nth-child(3) {
+  margin-top: 1.6rem;
+}
+
+@media screen and (max-width: 576px) {
+  .bigBanner .split-line:nth-child(2) {
+    margin-top: 1rem;
+  }
+}
+
+.bigBanner {
+  font-kerning: none;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.line-wrapper {
+  overflow: hidden;
+}
+
+canvas {
+  pointer-events: none;
+}
+.canvasWrapSection div {
+  pointer-events: none !important;
+}
+.split-line {
+  line-height: 1.3;
+}
