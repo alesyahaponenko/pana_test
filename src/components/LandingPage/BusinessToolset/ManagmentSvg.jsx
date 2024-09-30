@@ -91,8 +91,7 @@ const ManagmentSvg = ({ managementHover, isDarkTheme }) => {
     >
       <defs>
         <mask id="lineMask">
-          <rect x="0" y="0" width="308" height="172" 
-          fill={isDarkTheme ? "#262626" : "#fff"} />
+          <rect x="0" y="0" width="308" height="172" fill={isDarkTheme ? '#262626' : '#fff'} />
         </mask>
       </defs>
 

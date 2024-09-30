@@ -9,10 +9,11 @@ export const useHeaderStore = create((set) => ({
   setCurrentTheme: (theme) => set({ currentTheme: theme }),
   setFill: (fill) => set({ fill }),
   setAnimationPlayed: (played) => set({ animationPlayed: played }),
-  onAnimationComplete: () => set((state) => {
-    if (!state.animationPlayed) {
-      return { animationPlayed: true }
-    }
-    return {}
-  }),
+  onAnimationComplete: () =>
+    set((state) => {
+      if (!state.animationPlayed) {
+        return { animationPlayed: true }
+      }
+      return {}
+    }),
 }))

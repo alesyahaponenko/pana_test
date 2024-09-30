@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import  Logo  from './UI/Logo'
+import Logo from './UI/Logo'
 
 export default function Footer() {
   return (

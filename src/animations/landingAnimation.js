@@ -407,9 +407,9 @@ export const landingAnimation = (bannerRef) => {
         index === 0
           ? 0
           : Array.from(cards.slice(0, index)).reduce(
-            (sum, prevCard) => sum + document.querySelector(prevCard).offsetHeight,
-            0
-          )
+              (sum, prevCard) => sum + document.querySelector(prevCard).offsetHeight,
+              0
+            )
 
       b2bctl.fromTo(
         card,
@@ -484,9 +484,9 @@ export const landingAnimation = (bannerRef) => {
         index === 0
           ? 0
           : Array.from(cards.slice(0, index)).reduce((sum, prevCardSelector) => {
-            const prevCard = document.querySelector(prevCardSelector)
-            return sum + (prevCard ? prevCard.offsetHeight : 0)
-          }, 0)
+              const prevCard = document.querySelector(prevCardSelector)
+              return sum + (prevCard ? prevCard.offsetHeight : 0)
+            }, 0)
 
       b2bctl2.fromTo(
         cardElement,
