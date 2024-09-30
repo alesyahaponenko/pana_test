@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useCallback } from 'react'
+import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
 import CustomEase from 'gsap/CustomEase'

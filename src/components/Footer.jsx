@@ -80,13 +80,13 @@ export default function Footer() {
         </div>
         {/* Footer Links */}
         <div className="flex space-x-6">
-          <a href="#" className="font-aspekta text-[14px] leading-[20px] text-link">
+          <a href="/" className="font-aspekta text-[14px] leading-[20px] text-link">
             Terms
           </a>
-          <a href="#" className="font-aspekta text-[14px] leading-[20px] text-link">
+          <a href="/" className="font-aspekta text-[14px] leading-[20px] text-link">
             Cookies
           </a>
-          <a href="#" className="font-aspekta text-[14px] leading-[20px] text-link">
+          <a href="/" className="font-aspekta text-[14px] leading-[20px] text-link">
             Privacy Policy
           </a>
         </div>

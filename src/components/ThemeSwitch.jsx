@@ -51,7 +51,7 @@ const Blank = () => <svg className="h-6 w-6" />
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
-  const { theme, resolvedTheme, handleThemeChange } = useThemeHandler()
+  const { resolvedTheme, handleThemeChange } = useThemeHandler()
 
   useEffect(() => setMounted(true), [])
 

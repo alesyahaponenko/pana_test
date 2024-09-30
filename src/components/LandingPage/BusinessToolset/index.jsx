@@ -1,5 +1,4 @@
 import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import ManagmentSvg from './ManagmentSvg'
 import MarketingSvg from './MarketingSvg'

@@ -58,7 +58,6 @@ export const headerAnimation = (
     {
       fill: '#3AB54B',
       stagger: stagger,
-      duration: 1,
       duration: 0.04,
       ease: ease,
     },
@@ -69,7 +68,6 @@ export const headerAnimation = (
     {
       fill: fill,
       stagger: stagger,
-      duration: 1,
       duration: 0.04,
       ease: ease,
     },

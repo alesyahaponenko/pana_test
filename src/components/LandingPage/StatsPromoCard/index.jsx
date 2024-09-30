@@ -2,7 +2,6 @@
 import GreenButton from '@/components/UI/Buttons/GreenButton'
 import useModalStore from '@/store/useModalStore'
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
 
 const StatsPromoCard = () => {
   const { openModal } = useModalStore()
