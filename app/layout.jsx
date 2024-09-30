@@ -1,7 +1,6 @@
 import '@/css/tailwind.css'
 
 import { Inter, Space_Grotesk } from 'next/font/google'
-import { Analytics } from 'pliny/analytics'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProviders } from './theme-providers'
@@ -51,7 +50,6 @@ export default function RootLayout({ children }) {
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       <body className="bg-[#E9E9E9]/80 text-black antialiased dark:bg-[#000000]">
         <ThemeProviders>
-          <Analytics />
           <Header />
           <main className="mx-auto w-full overflow-x-hidden">{children}</main>
           <Footer />
