@@ -3,7 +3,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 import '@/css/splitText.css'
-import { M_PLUS_1 } from 'next/font/google'
 
 gsap.registerPlugin(ScrollTrigger, SplitText, MotionPathPlugin)
 
