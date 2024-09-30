@@ -2,7 +2,11 @@
 import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
 import { useHeaderStore } from '@/store/useHeaderStore'
 import { useEffect } from 'react'
-import CanvasBlock from '@/components/LandingPage/CanvasBlock'
+import dynamic from 'next/dynamic'
+
+const CanvasBlock = dynamic(() => import('@/components/LandingPage/CanvasBlock'), {
+  ssr: false,
+})
 
 const LaptopSection = () => {
   const { resolvedTheme } = useThemeHandler()
