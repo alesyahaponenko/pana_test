@@ -1,11 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { ContactShadows, Environment, PerspectiveCamera } from '@react-three/drei'
 import { Suspense, useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
-
-const DynamicLaptop = dynamic(() => import('@/components/LandingPage/CanvasBlock/Laptop'), {
-  ssr: false,
-})
+import Laptop from './Laptop'
 
 const CanvasBlock = () => {
   const [position, setPosition] = useState([0, 0, 20])
@@ -34,7 +30,7 @@ const CanvasBlock = () => {
     <div className="canvasWrapSection pointer-events-none fixed left-0 top-0 h-screen w-screen">
       <Canvas dpr={[1, 2]}>
         <Suspense fallback={null}>
-          <DynamicLaptop />
+          <Laptop />
           <Environment preset="city" />
         </Suspense>
         <PerspectiveCamera
