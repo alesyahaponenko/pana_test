@@ -22,6 +22,7 @@ import ThemeSwitch from './ThemeSwitch'
 import { headerAnimation } from '@/animations/headerAnimation'
 import { useHeaderStore } from '@/store/useHeaderStore'
 import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
+import gsap from 'gsap'
 
 const Header = () => {
   const headerRef = useRef()
@@ -47,6 +48,11 @@ const Header = () => {
     setCurrentTheme(resolvedTheme)
     setFill(resolvedTheme === 'dark' ? '#FFFFFF' : '#000000')
   }, [resolvedTheme, setCurrentTheme, setFill])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    // gsap.config({ nullTargetWarn: false }) // dont show warn
+  }, [])
 
   useEffect(() => {
     if (!animationPlayed) {

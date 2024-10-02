@@ -4,8 +4,14 @@ import { a as three } from '@react-spring/three'
 import StatsPromoCard from '../StatsPromoCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useHeaderStore } from '@/store/useHeaderStore'
+import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
 
 export default function Laptop({ ...props }) {
+  const { animationPlayed } = useHeaderStore()
+  const { resolvedTheme } = useThemeHandler()
+  const isDarkTheme = resolvedTheme === 'dark'
+
   const group = useRef()
   const coverRef = useRef()
   const screenRef = useRef()
@@ -67,7 +73,7 @@ export default function Laptop({ ...props }) {
   }, [])
 
   return (
-    <group ref={group} {...props} dispose={null} position={[0, -2, 0]}>
+    <group ref={group} {...props} dispose={null} position={[0, -2, 0]} visible={animationPlayed}>
       <three.group ref={coverRef} position={[0, -0.04, 0.41]}>
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
@@ -88,7 +94,7 @@ export default function Laptop({ ...props }) {
                   width: '1120px',
                   height: '720px',
                   overflow: 'hidden',
-                  backgroundColor: 'black',
+                  backgroundColor: `${isDarkTheme ? 'black' : 'white'}`,
                   padding: '20px',
                 }}
               >

@@ -9,7 +9,7 @@ const NewsletterModal = () => {
 
   if (!isOpen) return null
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-white/80 dark:bg-black/90">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/80 dark:bg-[#000000D0]">
       <div className="relative w-[794px] rounded-[24px] bg-[#262626] p-8 shadow-lg dark:bg-white">
         <div className="mx-auto w-full max-w-[386px] py-20">
           <button
@@ -35,7 +35,7 @@ const NewsletterModal = () => {
               <input
                 type="text"
                 placeholder="First name"
-                className="h-[52px] w-full rounded-full border border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black placeholder:text-[#AAABAD] dark:bg-white"
+                className="h-[52px] w-full rounded-full border border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black text-white placeholder:text-[#AAABAD] dark:bg-white dark:text-black"
               />
             </div>
 
@@ -43,7 +43,7 @@ const NewsletterModal = () => {
               <input
                 type="email"
                 placeholder="E-mail address"
-                className="h-[52px] w-full rounded-full border border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black placeholder:text-[#AAABAD] dark:bg-white"
+                className="h-[52px] w-full rounded-full border border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black text-white placeholder:text-[#AAABAD] dark:bg-white dark:text-black"
               />
             </div>
           </div>

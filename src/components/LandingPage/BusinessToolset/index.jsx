@@ -27,7 +27,7 @@ const BusinessToolset = () => {
         digital sales business
       </h2>
 
-      <div className="mt-[60px] flex flex-col gap-10">
+      <div className="mt-[7.5rem] flex flex-col gap-10">
         <div
           onMouseEnter={() => setManagementHover(true)}
           onMouseLeave={() => setManagementHover(false)}

@@ -14,6 +14,7 @@ const HomeLanding = () => {
   const handleAnimationComplete = () => {
     setIsScrollLocked(false)
   }
+
   return (
     <RemoveScroll enabled={isScrollLocked}>
       <div className="relative min-w-full max-w-[1200px]">
@@ -24,7 +25,7 @@ const HomeLanding = () => {
         <ContactUs />
       </div>
       <LaptopSection />
-      <div className="blurDiv fixed bottom-0 left-0 z-[9999] h-[20vh] w-full bg-gradient-to-t from-[#ededed] via-[#ededed] to-transparent dark:from-[#000] dark:via-[#000]"></div>
+      <div className="blurDiv fixed bottom-0 left-0 z-[999] h-[20vh] w-full bg-gradient-to-t from-[#ededed] via-[#ededed] to-transparent dark:from-[#000] dark:via-[#000]"></div>
       <NewsletterModal />
     </RemoveScroll>
   )

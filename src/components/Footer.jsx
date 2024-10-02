@@ -20,9 +20,9 @@ export default function Footer() {
           <input
             type="text"
             placeholder="First name"
-            className="h-[52px] w-full rounded-l-full border border-r-0 border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black placeholder:text-[#AAABAD] md:rounded-full md:border-r"
+            className="h-[52px] w-full rounded-l-full border border-r-0 border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black placeholder:text-[#AAABAD] dark:text-white md:rounded-full md:border-r"
           />
-          <button className="grid place-content-center rounded-r-full border border-l-0 border-mediumGray bg-transparent px-5 md:h-[52px] md:w-[82px] md:rounded-full md:border-0 md:bg-green">
+          <button className="grid place-content-center rounded-r-full border border-l-0 border-mediumGray bg-transparent px-5 transition hover:bg-[#34c848] md:h-[52px] md:w-[82px] md:rounded-full md:border-0 md:bg-green">
             <Image
               src={'/static/favicons/arrow-up.svg'}
               width={18}
@@ -42,7 +42,7 @@ export default function Footer() {
           <input
             type="text"
             placeholder="First name"
-            className="h-[52px] w-full rounded-l-full border border-r-0 border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black placeholder:text-[#AAABAD] md:rounded-full md:border-r"
+            className="h-[52px] w-full rounded-l-full border border-r-0 border-mediumGray bg-transparent px-5 py-3 text-[14px] font-normal leading-[20px] text-black placeholder:text-[#AAABAD] dark:text-white md:rounded-full md:border-r"
           />
           <button className="grid place-content-center rounded-r-full border border-l-0 border-mediumGray bg-transparent px-5 md:h-[52px] md:w-[82px] md:rounded-full md:border-0 md:bg-green">
             <Image
