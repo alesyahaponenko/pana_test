@@ -6,7 +6,6 @@ import Laptop from './Laptop'
 const CanvasBlock = () => {
   const [position, setPosition] = useState([0, 0, 20])
 
-
   useEffect(() => {
     const handleResize = () => {
       if (window.matchMedia('(max-width: 1024px)').matches) {

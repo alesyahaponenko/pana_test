@@ -22,7 +22,6 @@ import ThemeSwitch from './ThemeSwitch'
 import { headerAnimation } from '@/animations/headerAnimation'
 import { useHeaderStore } from '@/store/useHeaderStore'
 import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
-import gsap from 'gsap'
 
 const Header = () => {
   const headerRef = useRef()
