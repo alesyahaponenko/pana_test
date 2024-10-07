@@ -35,7 +35,7 @@ module.exports = {
         link: '#797979',
         lightGray: '#aaabad',
         mediumGray: '#7f7f7f',
-        smGray: '#7B7B7B',
+        smGray: '#fafbfd',
         darkGray: '#e9e9e9',
         gradientGray: '#d9d9d9',
         semiTransparent: '#19191999',

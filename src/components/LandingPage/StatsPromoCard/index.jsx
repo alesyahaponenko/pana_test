@@ -24,11 +24,11 @@ const StatsPromoCard = () => {
   return (
     <section className="statsPromoCard mx-auto my-20 w-full max-w-[1200px] bg-[#E9E9E9] p-4 dark:bg-[#17171799] md:rounded-[30px] md:py-[108px] lg:p-[120px] lg:pb-[164px]">
       <div className="mb-20 flex flex-col gap-10">
-        <h2 className="mx-auto max-w-[486px] text-center font-aspekta text-[1.5rem] font-medium leading-[2rem] text-black dark:text-white md:text-[32px] md:font-semibold md:leading-[44.8px] lg:max-w-[985px] lg:text-[2.3rem] lg:leading-[3.4rem]">
+        <h2 className="statsPromoCardTitle mx-auto max-w-[486px] text-center font-aspekta text-[1.5rem] font-medium leading-[2rem] text-black dark:text-white md:text-[32px] md:font-semibold md:leading-[44.8px] lg:max-w-[985px] lg:text-[2.3rem] lg:leading-[3.4rem]">
           Get live statistics and <span className="text-green">recommended sale</span> strategies
           based on statistics and user behaving
         </h2>
-        <div className="relative h-[124px] w-full md:h-[246px]">
+        <div className="relative h-[124px] w-full md:h-[250px]">
           <Image
             src={getImageSrc(
               '/static/landing/stats-promo/dash_light.svg',
@@ -55,7 +55,7 @@ const StatsPromoCard = () => {
           <GreenButton
             label={'Subscribe'}
             className={
-              'max-w-[157px] border border-transparent bg-green text-white hover:border hover:border-green hover:bg-transparent hover:text-white'
+              'max-w-[157px] border border-transparent bg-green text-white hover:border hover:border-green hover:bg-transparent hover:text-black hover:dark:text-white'
             }
             onClick={openModal}
           />

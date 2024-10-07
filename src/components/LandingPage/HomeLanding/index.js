@@ -7,6 +7,7 @@ import LaptopSection from '@/components/LandingPage/LaptopSection'
 import NewsletterModal from '@/components/UI/Modals/NewsletterModal'
 import { useState } from 'react'
 import { RemoveScroll } from 'react-remove-scroll'
+import StatsPromoCard from '@/components/LandingPage/StatsPromoCard'
 
 const HomeLanding = () => {
   const [isScrollLocked, setIsScrollLocked] = useState(true)
@@ -21,6 +22,7 @@ const HomeLanding = () => {
         <Banner onAnimationComplete={handleAnimationComplete} />
         <BusinessToolset />
         <B2BBC />
+        <StatsPromoCard />
         <div className="emptyDiv relative h-[400vh] w-full"></div>
         <ContactUs />
       </div>

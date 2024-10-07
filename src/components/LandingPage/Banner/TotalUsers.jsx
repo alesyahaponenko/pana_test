@@ -5,7 +5,7 @@ const TotalUsers = () => {
   return (
     <section
       className={clsx(
-        `flex w-full flex-col rounded-[16px] bg-white px-4 drop-shadow-xl dark:bg-darkSlate`
+        `flex w-full flex-col rounded-[36px] bg-white px-4 drop-shadow-xl dark:bg-darkSlate`
       )}
     >
       <div className="flex w-full translate-y-[25px] justify-between px-[21px]">
@@ -36,7 +36,7 @@ const TotalUsers = () => {
         </div>
       </div>
       <div className="relative h-full w-full">
-        <div className="relative flex h-0 w-full p-[20%]">
+        <div className="relative flex h-0 w-full p-[21%]">
           <div className="absolute left-0 top-0 h-full w-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"

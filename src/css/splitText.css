@@ -3,10 +3,7 @@
   line-height: 0.9;
   transform: translate(0px, 150px);
 }
-.bigBanner .split-line:nth-child(2) {
-  margin-top: 1.6rem;
-}
-.bigBanner .split-line:nth-child(3) {
+.bigBanner .split-line:nth-child(n) {
   margin-top: 1.6rem;
 }
 

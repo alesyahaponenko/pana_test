@@ -16,7 +16,7 @@ const SalesSvg = ({ salesHover, isDarkTheme }) => {
     const part3 = svgRef.current.querySelector('.part3')
     const number = svgRef.current.querySelector('.number')
 
-    timelineRef.current = gsap.timeline({ repeat: -1, yoyo: true })
+    timelineRef.current = gsap.timeline({ repeat: -1 })
 
     timelineRef.current.fromTo(
       part1,
@@ -36,15 +36,19 @@ const SalesSvg = ({ salesHover, isDarkTheme }) => {
       { drawSVG: '10% -20%', duration: 1, ease: 'none' }
     )
     timelineRef.current.to(
-      number,
+      { value: 0 }, // начальное значение
       {
-        innerHTML: 80,
+        value: 80, // конечное значение
         duration: 3,
         ease: 'none',
-        roundProps: 'innerHTML',
+        onUpdate: function () {
+          number.textContent = Math.round(this.targets()[0].value) // обновляем текст внутри элемента
+        },
       },
       0
     )
+
+    timelineRef.current.progress(1)
 
     return () => {
       if (timelineRef.current) {
@@ -55,7 +59,7 @@ const SalesSvg = ({ salesHover, isDarkTheme }) => {
 
   useEffect(() => {
     if (timelineRef.current) {
-      salesHover ? timelineRef.current.play() : timelineRef.current.pause()
+      salesHover ? timelineRef.current.restart() : timelineRef.current.pause()
     }
   }, [salesHover])
 

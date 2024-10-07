@@ -23,8 +23,8 @@ const BusinessToolset = () => {
   return (
     <section className="pinBusinessToolset relative mx-auto mb-10 h-auto w-full max-w-[1200px] px-4 pt-20 sm:mb-40 xl:px-0">
       <h2 className="btHeader text-center font-aspekta text-[1.5rem] font-semibold leading-[2rem] text-carbonBlack dark:text-white md:text-left md:text-[2rem] md:leading-[2.5rem] lg:max-w-[895px] lg:text-[3.5rem] lg:leading-[4rem]">
-        <span className="text-green">One tool provides</span> you everything you need to handle your
-        digital sales business
+        <span className="text-green">One tool provides</span> <br className="block sm:hidden" />
+        everything you need to handle your digital sales business
       </h2>
 
       <div className="mt-[7.5rem] flex flex-col gap-10">
@@ -37,9 +37,9 @@ const BusinessToolset = () => {
             <div className="relative flex h-[232px] w-full items-center justify-center p-1">
               <ManagmentSvg managementHover={managementHover} isDarkTheme={isDarkTheme} />
             </div>
-            <button className="absolute right-0 top-0 w-full max-w-[163px] translate-y-[-50%] transform rounded-full border border-green bg-[#232323CC] py-4 font-inter text-[16px] font-bold leading-[24px] text-green backdrop-blur-sm sm:hidden">
+            {/* <button className="absolute right-0 top-0 w-full max-w-[163px] translate-y-[-50%] transform rounded-full border border-green bg-[#232323CC] py-4 font-inter text-[16px] font-bold leading-[24px] text-green backdrop-blur-sm sm:hidden">
               Subscribe
-            </button>
+            </button> */}
           </div>
           <div className="mt-10 flex flex-col gap-4 lg:max-w-[590px]">
             <h3 className="animTitle font-aspekta text-[24px] font-medium leading-[31.2px] text-carbonBlack dark:text-white md:text-[32px] md:leading-[41.6px] lg:text-[40px] lg:leading-[52px]">

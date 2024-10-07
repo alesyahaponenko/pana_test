@@ -2,11 +2,11 @@ import Image from 'next/image'
 import React from 'react'
 import clsx from 'clsx'
 
-const BannerChart = ({ imageSrc, label }) => {
+const ReportsChart = ({ imageSrc, label }) => {
   return (
     <section
       className={clsx(
-        'flex w-full flex-col gap-[17.89px] rounded-[32px] bg-white pb-[15.68px] pt-[21.41px] drop-shadow-xl dark:bg-darkSlate'
+        'flex w-full flex-col gap-[17.89px] rounded-[32px] bg-white pb-[1rem] pt-[1.2rem] drop-shadow-xl dark:bg-darkSlate'
       )}
     >
       <div className="flex w-full justify-between px-[21px]">
@@ -21,13 +21,19 @@ const BannerChart = ({ imageSrc, label }) => {
           <div className="size-[1.93px] rounded-full bg-black dark:bg-white"></div>
         </div>
       </div>
-      <div className="relative h-full w-full pb-2">
-        <div className="relative h-0 w-full min-[1020px]:pb-[60%] min-[1200px]:pb-[66.5%] min-[1300px]:pb-[69%] min-[1400px]:pb-[71%] 2xl:pb-[74%] min-[1750px]:pb-[78%] min-[2250px]:pb-[83%]">
-          <Image src={imageSrc} alt="Chart" fill className="object-contain" />
+      <div className="relative h-full w-full">
+        <div
+          className={clsx(
+            'relative h-0 w-full min-[1000px]:pb-[48%] min-[1200px]:pb-[52%] min-[1300px]:pb-[53%] min-[1400px]:pb-[54.5%] 2xl:pb-[56%] min-[1750px]:pb-[59%] min-[2250px]:pb-[63%]'
+          )}
+        >
+          <div className="absolute inset-0 h-full w-full">
+            <Image src={imageSrc} alt="Chart" fill className="object-cover" />
+          </div>
         </div>
       </div>
     </section>
   )
 }
 
-export default BannerChart
+export default ReportsChart

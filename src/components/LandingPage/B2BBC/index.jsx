@@ -244,7 +244,7 @@ const B2BBC = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_2613_37130)">
+                  <g clipPath="url(#clip0_2613_37130)">
                     <rect
                       x="81.168"
                       y="48.7969"
@@ -276,7 +276,7 @@ const B2BBC = () => {
                       stroke="#3AB54B"
                       strokeOpacity="0.4"
                     />
-                    <g clip-path="url(#clip1_2613_37130)">
+                    <g clipPath="url(#clip1_2613_37130)">
                       <path
                         d="M198.738 124.756V134.918C198.738 138.463 207.597 141.335 218.528 141.335C229.458 141.335 238.317 138.463 238.317 134.918V124.756H198.738Z"
                         fill="#3AB54B"
@@ -499,7 +499,7 @@ const B2BBC = () => {
                 Customer loyalty by keeping them updated and providing exclusive, customized offers.
               </p>
             </div>
-            <div className="absolute bottom-[40px] left-0 h-[126px] w-full overflow-hidden">
+            <div className="relative bottom-[40px] left-0 h-[126px] w-full overflow-hidden sm:absolute">
               <div className="absolute -left-[15%] top-[50%] h-[100px] w-[100px] -translate-y-1/2 rounded-full border border-white"></div>
               <div className="absolute -right-[15%] top-[50%] h-[100px] w-[100px] -translate-y-1/2 rounded-full border border-white"></div>
               <div className="image1 absolute left-[37%] top-[50%] z-[1] h-[100px] w-[100px] -translate-y-1/2 scale-125 rounded-full border-4 border-[#000]">
@@ -580,7 +580,7 @@ const B2BBC = () => {
           <div
             onMouseEnter={() => setAiHover(true)}
             onMouseLeave={() => setAiHover(false)}
-            className="order z-[6] order-5 flex flex-col gap-8 rounded-[30px] bg-[#e7e7e7] p-8 dark:bg-carbonBlack dark:text-white md:max-w-[383px] lg:p-10"
+            className="order z-[6] order-6 flex flex-col gap-8 rounded-[30px] bg-[#e7e7e7] p-8 dark:bg-carbonBlack dark:text-white md:max-w-[383px] lg:p-10"
           >
             <div className="relative -mt-4 flex h-[169px] w-full justify-center self-end">
               <svg
@@ -590,7 +590,7 @@ const B2BBC = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g clip-path="url(#clip0_2913_41583)">
+                <g clipPath="url(#clip0_2913_41583)">
                   <path
                     className="movePart"
                     d="M137 140L137 139L135 139L135 140L137 140ZM135 152C135 152.552 135.448 153 136 153C136.552 153 137 152.552 137 152L135 152ZM135 140L135 152L137 152L137 140L135 140Z"

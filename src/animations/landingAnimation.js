@@ -57,8 +57,8 @@ export const landingAnimation = (bannerRef) => {
     '.totalUsersBlock',
     {
       'will-change': 'transform',
-      left: '25.5%',
-      top: '17%',
+      left: '26%',
+      top: '14.8%',
       rotation: 0,
       ease: 'none',
       duration: 1,
@@ -69,7 +69,7 @@ export const landingAnimation = (bannerRef) => {
     '.bannerBlock',
     {
       'will-change': 'transform',
-      left: '25.3%',
+      left: '26%',
       top: '58%',
       rotation: 0,
       ease: 'none',
@@ -388,33 +388,18 @@ export const landingAnimation = (bannerRef) => {
   })
 
   mm.add('(max-width: 567px)', () => {
-    const cardsOrders = document.querySelector('.cardsOrders')
-    const cards = ['.order-1', '.order-2', '.order-3']
+    const cards = ['.order-1', '.order-2', '.order-3', '.order-4', '.order-5', '.order-6']
 
-    let b2bctl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.cardsOrders',
-        start: `top bottom`,
-        end: '+=100%',
-        scrub: 3,
-      },
-    })
+    cards.forEach((cardSelector) => {
+      const cardElement = document.querySelector(cardSelector)
 
-    cards.forEach((card, index) => {
-      const cardElement = document.querySelector(card)
-      const prevCardsHeight =
-        index === 0
-          ? 0
-          : Array.from(cards.slice(0, index)).reduce(
-              (sum, prevCard) => sum + document.querySelector(prevCard).offsetHeight,
-              0
-            )
+      if (!cardElement) return
 
-      b2bctl.fromTo(
-        card,
+      gsap.fromTo(
+        cardElement,
         {
-          'will-change': 'transform',
-          y: () => cardsOrders.offsetHeight + prevCardsHeight,
+          'will-change': 'transform, opacity',
+          y: 100,
           opacity: 0,
           scale: 0.8,
         },
@@ -424,29 +409,38 @@ export const landingAnimation = (bannerRef) => {
           scale: 1,
           duration: 1,
           ease: 'power2.out',
-        },
-        index * 0.2
+          scrollTrigger: {
+            trigger: cardElement,
+            start: 'top 80%',
+            end: '+=30%',
+            scrub: true,
+          },
+        }
       )
 
-      const innerElements = cardElement.querySelectorAll('div, p')
-      b2bctl.fromTo(
-        innerElements,
-        {
-          'will-change': 'transform',
-          y: 20,
-          opacity: 0,
-          scale: 0.5,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: 'power2.out',
-        },
-        `-=${0.7}`
-      )
+      // const innerElements = cardElement.querySelectorAll('div, p')
+      // if (innerElements.length > 0) {
+      //   gsap.fromTo(
+      //     innerElements,
+      //     {
+      //       y: 20,
+      //       opacity: 0,
+      //       scale: 0.5,
+      //     },
+      //     {
+      //       y: 0,
+      //       opacity: 1,
+      //       scale: 1,
+      //       duration: 0.5,
+      //       stagger: 0.1,
+      //       ease: 'power2.out',
+      //       scrollTrigger: {
+      //         trigger: cardElement,
+      //         start: 'top 80%',
+      //       },
+      //     }
+      //   )
+      // }
     })
   })
 
@@ -454,80 +448,80 @@ export const landingAnimation = (bannerRef) => {
 
   let mm2 = gsap.matchMedia()
 
-  mm2.add('(max-width: 567px)', () => {
-    const cardsOrders = document.querySelector('.cardsOrders')
-    const cards = ['.order-4', '.order-5', '.order-6']
+  // mm2.add('(max-width: 567px)', () => {
+  //   const cardsOrders = document.querySelector('.cardsOrders')
+  //   const cards = ['.order-4', '.order-5', '.order-6']
 
-    // if (!cardsOrders) {
-    //   console.warn('Element .cardsOrders not found')
-    //   return
-    // }
+  //   // if (!cardsOrders) {
+  //   //   console.warn('Element .cardsOrders not found')
+  //   //   return
+  //   // }
 
-    let b2bctl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.cardsOrders',
-        start: `top bottom-=${1.3 * window.innerHeight}`,
-        end: '+=100%',
-        scrub: 3,
-      },
-    })
+  //   let b2bctl2 = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: '.cardsOrders',
+  //       start: `top bottom-=${1.3 * window.innerHeight}`,
+  //       end: '+=100%',
+  //       scrub: 3,
+  //     },
+  //   })
 
-    cards.forEach((cardSelector, index) => {
-      const cardElement = document.querySelector(cardSelector)
-      if (!cardElement) {
-        console.warn(`Element ${cardSelector} not found`)
-        return
-      }
+  //   cards.forEach((cardSelector, index) => {
+  //     const cardElement = document.querySelector(cardSelector)
+  //     if (!cardElement) {
+  //       console.warn(`Element ${cardSelector} not found`)
+  //       return
+  //     }
 
-      const prevCardsHeight =
-        index === 0
-          ? 0
-          : Array.from(cards.slice(0, index)).reduce((sum, prevCardSelector) => {
-              const prevCard = document.querySelector(prevCardSelector)
-              return sum + (prevCard ? prevCard.offsetHeight : 0)
-            }, 0)
+  //     const prevCardsHeight =
+  //       index === 0
+  //         ? 0
+  //         : Array.from(cards.slice(0, index)).reduce((sum, prevCardSelector) => {
+  //           const prevCard = document.querySelector(prevCardSelector)
+  //           return sum + (prevCard ? prevCard.offsetHeight : 0)
+  //         }, 0)
 
-      b2bctl2.fromTo(
-        cardElement,
-        {
-          'will-change': 'transform',
-          y: () => cardsOrders.offsetHeight + prevCardsHeight,
-          opacity: 0,
-          scale: 0.8,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: 'power2.out',
-        },
-        index * 0.2
-      )
+  //     b2bctl2.fromTo(
+  //       cardElement,
+  //       {
+  //         'will-change': 'transform',
+  //         y: () => cardsOrders.offsetHeight + prevCardsHeight,
+  //         opacity: 0,
+  //         scale: 0.8,
+  //       },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         scale: 1,
+  //         duration: 1,
+  //         ease: 'power2.out',
+  //       },
+  //       index * 0.2
+  //     )
 
-      const innerElements = cardElement.querySelectorAll('p, div, *')
-      if (innerElements.length > 0) {
-        b2bctl2.fromTo(
-          innerElements,
-          {
-            'will-change': 'transform',
-            y: 20,
-            opacity: 0,
-            scale: 0.5,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.5,
-            stagger: 0.1,
-            ease: 'power2.out',
-          },
-          `-=${0.7}`
-        )
-      }
-    })
-  })
+  //     const innerElements = cardElement.querySelectorAll('p, div, *')
+  //     if (innerElements.length > 0) {
+  //       b2bctl2.fromTo(
+  //         innerElements,
+  //         {
+  //           'will-change': 'transform',
+  //           y: 20,
+  //           opacity: 0,
+  //           scale: 0.5,
+  //         },
+  //         {
+  //           y: 0,
+  //           opacity: 1,
+  //           scale: 1,
+  //           duration: 0.5,
+  //           stagger: 0.1,
+  //           ease: 'power2.out',
+  //         },
+  //         `-=${0.7}`
+  //       )
+  //     }
+  //   })
+  // })
 
   mm2.add('(min-width: 568px)', () => {
     ScrollTrigger.create({
@@ -588,6 +582,48 @@ export const landingAnimation = (bannerRef) => {
       '<'
     )
   })
+
+  const statsPromoCardTitle = document.querySelector('.statsPromoCardTitle')
+  let statsPromotl = gsap.timeline()
+  if (statsPromoCardTitle) {
+    const StatsPromoCardTitleAnim = new SplitText(statsPromoCardTitle, {
+      type: 'lines',
+      linesClass: 'split-line',
+    })
+
+    StatsPromoCardTitleAnim.lines.forEach((line) => {
+      const wrapper = document.createElement('div')
+      wrapper.classList.add('line-wrapper')
+      line.parentNode.insertBefore(wrapper, line)
+      wrapper.appendChild(line)
+    })
+
+    statsPromotl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.statsPromoCard',
+        start: 'top 80%',
+        end: '+=30%',
+        scrub: 3,
+        fastScrollEnd: true,
+      },
+    })
+
+    statsPromotl.fromTo(
+      StatsPromoCardTitleAnim.lines,
+      {
+        'will-change': 'transform',
+        y: 150,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'expo.out',
+      }
+    )
+  }
 
   const bigLogotl = gsap.timeline({
     scrollTrigger: {
@@ -716,6 +752,24 @@ export const landingAnimation = (bannerRef) => {
     },
     '<'
   )
+  bigLogotl.to(
+    '.litAnim',
+    {
+      opacity: 1,
+      duration: 1,
+      ease: 'none',
+    },
+    '<'
+  )
+  bigLogotl.to(
+    '.lit',
+    {
+      opacity: 1,
+      duration: 1,
+      ease: 'none',
+    },
+    '<'
+  )
 
   const mainTimeline = gsap.timeline()
   mainTimeline
@@ -725,6 +779,7 @@ export const landingAnimation = (bannerRef) => {
     .add(btlt2)
     .add(b2bctl)
     .add(b2bctl2)
+    .add(statsPromotl)
     .add(bigLogotl)
     .add(promoCardtl)
     .add(promoCardAfterTl)

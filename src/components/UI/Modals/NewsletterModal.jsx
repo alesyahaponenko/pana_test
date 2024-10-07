@@ -10,7 +10,7 @@ const NewsletterModal = () => {
   if (!isOpen) return null
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/80 dark:bg-[#000000D0]">
-      <div className="relative w-[794px] rounded-[24px] bg-[#262626] p-8 shadow-lg dark:bg-white">
+      <div className="relative w-[95%] rounded-[24px] bg-[#262626] p-8 shadow-lg dark:bg-white md:w-[794px]">
         <div className="mx-auto w-full max-w-[386px] py-20">
           <button
             className="absolute right-4 top-4 text-gray-500 hover:text-black"

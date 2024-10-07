@@ -92,7 +92,7 @@ const Header = () => {
           <ThemeSwitch />
           <GreenButton
             label={'Subscribe'}
-            className={'hidden hover:bg-green hover:text-white md:block'}
+            className={'block hover:bg-green hover:text-white'}
             onClick={openModal}
           />
         </div>

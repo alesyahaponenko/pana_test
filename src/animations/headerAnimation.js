@@ -18,80 +18,81 @@ export const headerAnimation = (
 
   new SplitText('.bigBanner', { type: 'lines', linesClass: 'split-line' })
 
-  tl.to(logoPreLoadRef.current.querySelectorAll('.lit'), {
-    opacity: 1,
-    stagger: stagger,
-    duration: duration,
-    ease: ease,
-  })
-  tl.to(
-    logoPreLoadRef.current.querySelectorAll('.lit'),
-    {
-      opacity: 0,
-      stagger: stagger,
-      duration: duration,
-      ease: ease,
-    },
-    '<+=1'
-  )
-  tl.to(
-    logoPreLoadRef.current.querySelector('.greenPoint'),
-    {
-      opacity: 1,
-      duration: duration,
-      ease: ease,
-    },
-    '<+=0.5'
-  )
-  tl.to(
-    logoPreLoadRef.current.querySelectorAll('.lit'),
-    {
-      opacity: 1,
-      stagger: stagger,
-      duration: duration,
-      ease: ease,
-    },
-    '<+=1'
-  )
-  tl.to(
-    logoPreLoadRef.current.querySelectorAll('.lit'),
-    {
-      fill: '#3AB54B',
-      stagger: stagger,
-      duration: 0.04,
-      ease: ease,
-    },
-    '<+=0.8'
-  )
-  tl.to(
-    logoPreLoadRef.current.querySelectorAll('.lit'),
-    {
-      fill: fill,
-      stagger: stagger,
-      duration: 0.04,
-      ease: ease,
-    },
-    '<+=0.4'
-  )
-  tl.to(
-    logoPreLoadRef.current.querySelectorAll('.lit'),
-    {
-      opacity: 0,
-      stagger: stagger,
-      duration: duration,
-      ease: ease,
-    },
-    '<+=1'
-  )
-  tl.to(
-    logoPreLoadRef.current.querySelector('.greenPoint'),
-    {
-      opacity: 0,
-      duration: duration,
-      ease: ease,
-    },
-    '<+=1'
-  )
+  // tl.to(logoPreLoadRef.current.querySelectorAll('.lit'), {
+  //   opacity: 1,
+  //   stagger: stagger,
+  //   duration: duration,
+  //   ease: ease,
+  // })
+
+  // tl.to(
+  //   logoPreLoadRef.current.querySelectorAll('.lit'),
+  //   {
+  //     opacity: 0,
+  //     stagger: stagger,
+  //     duration: duration,
+  //     ease: ease,
+  //   },
+  //   '<+=1'
+  // )
+  // tl.to(
+  //   logoPreLoadRef.current.querySelector('.greenPoint'),
+  //   {
+  //     opacity: 1,
+  //     duration: duration,
+  //     ease: ease,
+  //   },
+  //   '<+=0.5'
+  // )
+  // tl.to(
+  //   logoPreLoadRef.current.querySelectorAll('.lit'),
+  //   {
+  //     opacity: 1,
+  //     stagger: stagger,
+  //     duration: duration,
+  //     ease: ease,
+  //   },
+  //   '<+=1'
+  // )
+  // tl.to(
+  //   logoPreLoadRef.current.querySelectorAll('.lit'),
+  //   {
+  //     fill: '#3AB54B',
+  //     stagger: stagger,
+  //     duration: 0.04,
+  //     ease: ease,
+  //   },
+  //   '<+=0.8'
+  // )
+  // tl.to(
+  //   logoPreLoadRef.current.querySelectorAll('.lit'),
+  //   {
+  //     fill: fill,
+  //     stagger: stagger,
+  //     duration: 0.04,
+  //     ease: ease,
+  //   },
+  //   '<+=0.4'
+  // )
+  // tl.to(
+  //   logoPreLoadRef.current.querySelectorAll('.lit'),
+  //   {
+  //     opacity: 0,
+  //     stagger: stagger,
+  //     duration: duration,
+  //     ease: ease,
+  //   },
+  //   '<+=1'
+  // )
+  // tl.to(
+  //   logoPreLoadRef.current.querySelector('.greenPoint'),
+  //   {
+  //     opacity: 0,
+  //     duration: duration,
+  //     ease: ease,
+  //   },
+  //   '<+=1'
+  // )
   ///////////////////////
   tl.fromTo(
     headerRef.current,
