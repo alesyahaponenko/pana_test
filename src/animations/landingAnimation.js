@@ -583,6 +583,70 @@ export const landingAnimation = (bannerRef) => {
     )
   })
 
+  ///PANA LOGO
+  const panaTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.bigLogoSection',
+      start: 'top 70%',
+      end: '+=80%',
+      scrub: 3,
+      // fastScrollEnd: true,
+    },
+  })
+  panaTl.fromTo(
+    '.bigLogoSectionSvg .litAnim:nth-child(-n+4)',
+    {
+      'will-change': 'transform',
+      yPercent: 150,
+    },
+    {
+      yPercent: 0,
+      duration: 1,
+      stagger: 0.1,
+      ease: 'expo.out',
+    }
+  )
+  panaTl.fromTo(
+    '.bigLogoSectionSvg .litAnim:last-child',
+    {
+      'will-change': 'transform',
+      yPercent: 400,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.1,
+      ease: 'expo.out',
+    }, "<+=0.5"
+  )
+  panaTl.fromTo(
+    '.bigLogoSectionLaptop',
+    {
+      'will-change': 'transform',
+      yPercent: 150,
+      scale: 0,
+    },
+    {
+      yPercent: () => {
+        if (window.innerWidth > 1024) {
+          return 0
+        }
+        if (window.innerWidth < 1025 && window.innerWidth > 576) {
+          return -50
+        }
+        if (window.innerWidth < 577) {
+          return 10
+        }
+      },
+      scale: 1,
+      duration: 1.5,
+      ease: 'expo.out',
+    },
+    '<-=0.2'
+  )
+
   const statsPromoCardTitle = document.querySelector('.statsPromoCardTitle')
   let statsPromotl = gsap.timeline()
   if (statsPromoCardTitle) {
@@ -602,9 +666,9 @@ export const landingAnimation = (bannerRef) => {
       scrollTrigger: {
         trigger: '.statsPromoCard',
         start: 'top 80%',
-        end: '+=30%',
+        end: '+=50%',
         scrub: 3,
-        fastScrollEnd: true,
+        // fastScrollEnd: true,
       },
     })
 
@@ -625,151 +689,318 @@ export const landingAnimation = (bannerRef) => {
     )
   }
 
-  const bigLogotl = gsap.timeline({
+  const llmText = document.querySelector('.llmText')
+  const llmTitle = document.querySelector('.llmTitle')
+
+  const llmTitleAnim = new SplitText(llmTitle, {
+    type: 'lines',
+    linesClass: 'split-line',
+  })
+
+  llmTitleAnim.lines.forEach((line) => {
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('line-wrapper')
+    line.parentNode.insertBefore(wrapper, line)
+    wrapper.appendChild(line)
+  })
+
+  const llmTextAnim = new SplitText(llmText, {
+    type: 'lines',
+    linesClass: 'split-line',
+  })
+
+  llmTextAnim.lines.forEach((line) => {
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('line-wrapper')
+    line.parentNode.insertBefore(wrapper, line)
+    wrapper.appendChild(line)
+  })
+
+  let llmTitleTl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.emptyDiv',
-      start: `top bottom`,
-      end: '+=200%',
+      trigger: '.llmTextWrap',
+      start: 'top 80%',
+      end: '+=30%',
       scrub: 3,
-      fastScrollEnd: true,
-      // id: 'pana',
-      // markers: {
-      //   startColor: 'white',
-      //   endColor: 'white',
-      //   fontSize: '12px',
-      //   fontWeight: 'bold',
-      //   indent: 1200,
-      // },
+      // fastScrollEnd: true,
     },
   })
 
-  bigLogotl.fromTo(
-    '.litAnim',
+  llmTitleTl.fromTo(
+    llmTitleAnim.lines,
     {
       'will-change': 'transform',
-      yPercent: 150,
+      y: 150,
+      opacity: 0,
     },
     {
-      yPercent: 0,
+      y: 0,
       opacity: 1,
-      stagger: 0.3,
-      duration: 3,
-      ease: 'power2.inOut',
-    }
-  )
-  bigLogotl.to('.greenPoint', {
-    opacity: 1,
-    duration: 0.3,
-    ease: 'none',
-  })
-  bigLogotl.to(
-    '.litAnim',
-    {
-      opacity: 0.5,
-      stagger: 0.3,
       duration: 1,
-      ease: 'none',
-    },
-    '+=1'
-  )
-
-  const promoCardtl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.emptyDiv',
-      start: `top top+=-${0.5 * window.innerHeight}`,
-      end: '+=100%',
-      scrub: 3,
-      fastScrollEnd: true,
-      // id: 'PROMO',
-      // markers: {
-      //   startColor: 'red',
-      //   endColor: 'red',
-      //   fontSize: '12px',
-      //   fontWeight: 'bold',
-      //   // indent: 1200,
-      // },
-    },
-  })
-
-  promoCardtl.fromTo(
-    '.statsPromoCard',
-    {
-      y: () => 0,
-    },
-    {
-      y: () => -window.innerHeight,
-      ease: 'none',
+      stagger: 0.2,
+      ease: 'expo.out',
     }
   )
 
-  const promoCardAfterTl = gsap.timeline({
+  let llmTl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.emptyDiv',
-      start: `bottom bottom-=${-2 * window.innerHeight}`,
+      trigger: '.llmTextWrap',
+      start: 'top 60%',
+      end: '+=30%',
       scrub: 3,
-      fastScrollEnd: true,
-      // id: 'After',
-      // markers: {
-      //   startColor: 'green',
-      //   endColor: 'green',
-      //   fontSize: '12px',
-      //   fontWeight: 'bold',
-      //   indent: 1200,
-      // },
+      // fastScrollEnd: true,
     },
   })
 
-  promoCardAfterTl.to('.bigLogoSection', {
-    zIndex: -1,
-    duration: 0.3,
-    ease: 'none',
+  llmTl.fromTo(
+    llmTextAnim.lines,
+    {
+      'will-change': 'transform',
+      y: 150,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'expo.out',
+    }
+  )
+
+  //let statsPromoMedia = gsap.matchMedia()
+  let greenButtonTl = gsap.timeline()
+  let statsImageTl = gsap.timeline()
+  let llmImageTl = gsap.timeline()
+
+  // statsPromoMedia.add('(min-width: 1024px)', () => {
+  greenButtonTl.fromTo(
+    '.greenButton',
+    {
+      'will-change': 'transform',
+      y: 150,
+      opacity: 0,
+      filter: 'blur(20px)',
+    },
+    {
+      y: 0,
+      opacity: 1,
+      filter: 'blur(0px)',
+      duration: 1,
+      ease: 'expo.out',
+      scrollTrigger: {
+        trigger: '.greenButtonWrap',
+        start: 'top 85%',
+        end: '+=30%',
+        scrub: 3,
+        // fastScrollEnd: true,
+      },
+    }
+  )
+  statsImageTl.fromTo(
+    '.statsImage',
+    {
+      'will-change': 'transform',
+      y: 150,
+      opacity: 0,
+      scale: 0.5,
+      filter: 'blur(20px)',
+    },
+    {
+      y: 0,
+      opacity: 1,
+      filter: 'blur(0px)',
+      scale: 1,
+      duration: 1,
+      ease: 'expo.out',
+      scrollTrigger: {
+        trigger: '.statsPromoCard',
+        start: 'top 60%',
+        end: '+=30%',
+        scrub: 3,
+        // fastScrollEnd: true,
+      },
+    }
+  )
+  llmImageTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.llmImageWrap',
+      start: 'top 85%',
+      end: '+=30%',
+      scrub: 3,
+      // fastScrollEnd: true,
+    },
   })
-  promoCardAfterTl.to(
-    '.litAnim',
+  llmImageTl.fromTo(
+    '.llmImage',
     {
+      'will-change': 'transform',
+      y: 150,
+      scale: 0.5,
       opacity: 0,
-      stagger: 0.3,
-      duration: 1,
-      ease: 'none',
+      filter: 'blur(20px)',
     },
-    '<'
-  )
-  promoCardAfterTl.to(
-    '.greenPoint',
     {
-      opacity: 0,
-      duration: 0.3,
-      ease: 'none',
-    },
-    '<'
-  )
-  bigLogotl.to(
-    '.blurDiv',
-    {
-      autoAlpha: 0,
-      duration: 1,
-      ease: 'none',
-    },
-    '<'
-  )
-  bigLogotl.to(
-    '.litAnim',
-    {
+      y: 0,
       opacity: 1,
+      scale: 1,
+      filter: 'blur(0px)',
       duration: 1,
-      ease: 'none',
-    },
-    '<'
+      ease: 'expo.out',
+    }
   )
-  bigLogotl.to(
-    '.lit',
-    {
-      opacity: 1,
-      duration: 1,
-      ease: 'none',
-    },
-    '<'
-  )
+  llmImageTl.to('.blurDiv ', {
+    opacity: 0,
+    duration: 1,
+    ease: 'expo.out',
+  })
+  // }) // statsPromoMedia end
+
+  // const bigLogotl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.emptyDiv',
+  //     start: `top bottom`,
+  //     end: '+=200%',
+  //     scrub: 3,
+  //     fastScrollEnd: true,
+  //     // id: 'pana',
+  //     // markers: {
+  //     //   startColor: 'white',
+  //     //   endColor: 'white',
+  //     //   fontSize: '12px',
+  //     //   fontWeight: 'bold',
+  //     //   indent: 1200,
+  //     // },
+  //   },
+  // })
+
+  // bigLogotl.fromTo(
+  //   '.litAnim',
+  //   {
+  //     'will-change': 'transform',
+  //     yPercent: 150,
+  //   },
+  //   {
+  //     yPercent: 0,
+  //     opacity: 1,
+  //     stagger: 0.3,
+  //     duration: 3,
+  //     ease: 'power2.inOut',
+  //   }
+  // )
+  // bigLogotl.to('.greenPoint', {
+  //   opacity: 1,
+  //   duration: 0.3,
+  //   ease: 'none',
+  // })
+  // bigLogotl.to(
+  //   '.litAnim',
+  //   {
+  //     opacity: 0.5,
+  //     stagger: 0.3,
+  //     duration: 1,
+  //     ease: 'none',
+  //   },
+  //   '+=1'
+  // )
+
+  // const promoCardtl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.emptyDiv',
+  //     start: `top top+=-${0.5 * window.innerHeight}`,
+  //     end: '+=100%',
+  //     scrub: 3,
+  //     fastScrollEnd: true,
+  //     // id: 'PROMO',
+  //     // markers: {
+  //     //   startColor: 'red',
+  //     //   endColor: 'red',
+  //     //   fontSize: '12px',
+  //     //   fontWeight: 'bold',
+  //     //   // indent: 1200,
+  //     // },
+  //   },
+  // })
+
+  // promoCardtl.fromTo(
+  //   '.statsPromoCard',
+  //   {
+  //     y: () => 0,
+  //   },
+  //   {
+  //     y: () => -window.innerHeight,
+  //     ease: 'none',
+  //   }
+  // )
+
+  // const promoCardAfterTl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.emptyDiv',
+  //     start: `bottom bottom-=${-2 * window.innerHeight}`,
+  //     scrub: 3,
+  //     fastScrollEnd: true,
+  //     // id: 'After',
+  //     // markers: {
+  //     //   startColor: 'green',
+  //     //   endColor: 'green',
+  //     //   fontSize: '12px',
+  //     //   fontWeight: 'bold',
+  //     //   indent: 1200,
+  //     // },
+  //   },
+  // })
+
+  // promoCardAfterTl.to('.bigLogoSection', {
+  //   zIndex: -1,
+  //   duration: 0.3,
+  //   ease: 'none',
+  // })
+  // promoCardAfterTl.to(
+  //   '.litAnim',
+  //   {
+  //     opacity: 0,
+  //     stagger: 0.3,
+  //     duration: 1,
+  //     ease: 'none',
+  //   },
+  //   '<'
+  // )
+  // promoCardAfterTl.to(
+  //   '.greenPoint',
+  //   {
+  //     opacity: 0,
+  //     duration: 0.3,
+  //     ease: 'none',
+  //   },
+  //   '<'
+  // )
+  // bigLogotl.to(
+  //   '.blurDiv',
+  //   {
+  //     autoAlpha: 0,
+  //     duration: 1,
+  //     ease: 'none',
+  //   },
+  //   '<'
+  // )
+  // bigLogotl.to(
+  //   '.litAnim',
+  //   {
+  //     opacity: 1,
+  //     duration: 1,
+  //     ease: 'none',
+  //   },
+  //   '<'
+  // )
+  // bigLogotl.to(
+  //   '.lit',
+  //   {
+  //     opacity: 1,
+  //     duration: 1,
+  //     ease: 'none',
+  //   },
+  //   '<'
+  // )
 
   const mainTimeline = gsap.timeline()
   mainTimeline
@@ -780,9 +1011,15 @@ export const landingAnimation = (bannerRef) => {
     .add(b2bctl)
     .add(b2bctl2)
     .add(statsPromotl)
-    .add(bigLogotl)
-    .add(promoCardtl)
-    .add(promoCardAfterTl)
+    .add(llmTextAnim)
+    .add(llmTitleTl)
+    .add(llmTl)
+    .add(statsImageTl)
+    .add(llmImageTl)
+    .add(greenButtonTl)
+  // .add(bigLogotl)
+  // .add(promoCardtl)
+  // .add(promoCardAfterTl)
 
   return { mainTimeline }
 }

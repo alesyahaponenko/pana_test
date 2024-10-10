@@ -22,12 +22,12 @@ const HomeLanding = () => {
         <Banner onAnimationComplete={handleAnimationComplete} />
         <BusinessToolset />
         <B2BBC />
+        <LaptopSection />
         <StatsPromoCard />
-        <div className="emptyDiv relative h-[400vh] w-full"></div>
         <ContactUs />
       </div>
-      <LaptopSection />
-      <div className="blurDiv fixed bottom-0 left-0 z-[999] h-[20vh] w-full bg-gradient-to-t from-[#ededed] via-[#ededed] to-transparent dark:from-[#000] dark:via-[#000]"></div>
+      {/* <Laptop3dSection /> */}
+      <div className="blurDiv fixed bottom-0 left-0 z-[999] h-[15vh] w-full bg-gradient-to-t from-[#ededed] via-[#ededed] to-transparent dark:from-[#000] dark:via-[#000]"></div>
       <NewsletterModal />
     </RemoveScroll>
   )

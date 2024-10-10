@@ -24,7 +24,7 @@ const ReportsChart = ({ imageSrc, label }) => {
       <div className="relative h-full w-full">
         <div
           className={clsx(
-            'relative h-0 w-full min-[1000px]:pb-[48%] min-[1200px]:pb-[52%] min-[1300px]:pb-[53%] min-[1400px]:pb-[54.5%] 2xl:pb-[56%] min-[1750px]:pb-[59%] min-[2250px]:pb-[63%]'
+            'relative h-0 w-full pb-[48%] min-[1000px]:pb-[48%] min-[1200px]:pb-[52%] min-[1300px]:pb-[53%] min-[1400px]:pb-[54.5%] 2xl:pb-[56%] min-[1750px]:pb-[59%] min-[2250px]:pb-[63%]'
           )}
         >
           <div className="absolute inset-0 h-full w-full">

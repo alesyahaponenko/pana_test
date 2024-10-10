@@ -45,7 +45,7 @@ const BusinessToolset = () => {
             <h3 className="animTitle font-aspekta text-[24px] font-medium leading-[31.2px] text-carbonBlack dark:text-white md:text-[32px] md:leading-[41.6px] lg:text-[40px] lg:leading-[52px]">
               Management
             </h3>
-            <p className="animTitle font-aspekta text-[16px] leading-[24px] text-smGray lg:text-[20px] lg:leading-[30px]">
+            <p className="animTitle font-aspekta text-[16px] leading-[24px] text-darkSlate dark:text-smGray lg:text-[20px] lg:leading-[30px]">
               Effortlessly organize your store, branches, products, team, and customers - whether
               you’re a startup or a large enterprise.
             </p>
@@ -66,7 +66,7 @@ const BusinessToolset = () => {
             <h3 className="animTitle font-aspekta text-[24px] font-medium leading-[31.2px] text-carbonBlack dark:text-white md:text-[32px] md:leading-[41.6px] lg:text-[40px] lg:leading-[52px]">
               Marketing
             </h3>
-            <p className="animTitle font-aspekta text-[16px] leading-[24px] text-smGray lg:text-[20px] lg:leading-[30px]">
+            <p className="animTitle font-aspekta text-[16px] leading-[24px] text-darkSlate dark:text-smGray lg:text-[20px] lg:leading-[30px]">
               Leverage direct communication with your customers to keep them informed about your
               products, offers, and services.
             </p>
@@ -87,7 +87,7 @@ const BusinessToolset = () => {
             <h3 className="animTitle font-aspekta text-[24px] font-medium leading-[31.2px] text-carbonBlack dark:text-white md:text-[32px] md:leading-[41.6px] lg:text-[40px] lg:leading-[52px]">
               Sales
             </h3>
-            <p className="animTitle font-aspekta text-[16px] leading-[24px] text-smGray lg:text-[20px] lg:leading-[30px]">
+            <p className="animTitle font-aspekta text-[16px] leading-[24px] text-darkSlate dark:text-smGray lg:text-[20px] lg:leading-[30px]">
               Follow your own sales strategies and harness live statistics to maximize your business
               success.
             </p>

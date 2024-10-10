@@ -22,7 +22,7 @@ const BannerChart = ({ imageSrc, label }) => {
         </div>
       </div>
       <div className="relative h-full w-full pb-2">
-        <div className="relative h-0 w-full min-[1020px]:pb-[60%] min-[1200px]:pb-[66.5%] min-[1300px]:pb-[69%] min-[1400px]:pb-[71%] 2xl:pb-[74%] min-[1750px]:pb-[78%] min-[2250px]:pb-[83%]">
+        <div className="relative h-0 w-full pb-[62%] min-[1020px]:pb-[60%] min-[1200px]:pb-[66.5%] min-[1300px]:pb-[69%] min-[1400px]:pb-[71%] 2xl:pb-[74%] min-[1750px]:pb-[78%] min-[2250px]:pb-[83%]">
           <Image src={imageSrc} alt="Chart" fill className="object-contain" />
         </div>
       </div>

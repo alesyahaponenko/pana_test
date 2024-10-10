@@ -66,7 +66,7 @@ const Banner = ({ onAnimationComplete }) => {
             businesses
           </h1>
         </div>
-        <div className="relative m-auto hidden h-screen w-[90%] justify-center">
+        {/* <div className="relative m-auto hidden h-screen w-[90%] justify-center">
           <Image
             src={getImageSrc(
               '/static/landing/mob_dashboard.svg',
@@ -76,8 +76,8 @@ const Banner = ({ onAnimationComplete }) => {
             alt="Dashboard"
             className="object-contain"
           />
-        </div>
-        <div className="dashboardPin relative hidden sm:flex">
+        </div> */}
+        <div className="dashboardPin relative hidden w-full sm:flex">
           <div className="dashboard relative mx-auto flex w-[95%] justify-center lg:w-[75vw] lg:max-w-[1920px]">
             <div className="relative h-0 w-full p-[37.8%]">
               <div className="">

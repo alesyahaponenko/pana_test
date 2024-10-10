@@ -221,7 +221,7 @@ const B2BBC = () => {
   return (
     <section
       ref={blockRef}
-      className="sectionB2BBC relative mx-auto mb-[20vh] w-full max-w-[1200px] px-4 xl:px-0"
+      className="sectionB2BBC relative mx-auto w-full max-w-[1200px] px-4 sm:mb-[20vh] xl:px-0"
     >
       <h2 className="b2bcHeader mx-auto max-w-[310px] text-center font-aspekta text-[1.5rem] font-semibold leading-[2rem] text-carbonBlack dark:text-white sm:mb-40 md:max-w-[590px] md:text-[2rem] md:leading-[2.5rem] lg:text-[3.5rem] lg:leading-[4.2rem]">
         Next generation of <br />
@@ -495,7 +495,7 @@ const B2BBC = () => {
               <h3 className="font-aspekta text-[24px] font-medium leading-[31.2px] text-carbonBlack dark:text-white lg:text-[28px] lg:leading-[36.4px]">
                 Boost
               </h3>
-              <p className="font-aspekta text-[16px] font-normal leading-[24px] text-smGray lg:text-[20px] lg:leading-[30px]">
+              <p className="font-aspekta text-[16px] font-normal leading-[24px] text-darkSlate dark:text-smGray lg:text-[20px] lg:leading-[30px]">
                 Customer loyalty by keeping them updated and providing exclusive, customized offers.
               </p>
             </div>
@@ -544,7 +544,7 @@ const B2BBC = () => {
               <h3 className="font-aspekta text-[24px] font-medium leading-[31.2px] text-carbonBlack dark:text-white lg:text-[28px] lg:leading-[36.4px]">
                 Benefit
               </h3>
-              <p className="font-aspekta text-[16px] font-normal leading-[24px] text-smGray lg:text-[20px] lg:leading-[30px]">
+              <p className="font-aspekta text-[16px] font-normal leading-[24px] text-carbonBlack dark:text-smGray lg:text-[20px] lg:leading-[30px]">
                 From the power of partnerships to expand your reach and grow your audience.
               </p>
             </div>
@@ -791,7 +791,7 @@ const B2BBC = () => {
             <h3 className="font-aspekta text-[24px] font-medium leading-[31.2px] text-carbonBlack dark:text-white lg:text-[28px] lg:leading-[36.4px]">
               AI powered
             </h3>
-            <p className="font-aspekta text-[16px] font-medium leading-[24px] text-smGray lg:text-[20px] lg:leading-[30px]">
+            <p className="font-aspekta text-[16px] font-medium leading-[24px] text-carbonBlack dark:text-smGray lg:text-[20px] lg:leading-[30px]">
               We offer state-of-the-art technology, allowing you to act with unprecedented
               efficiency.
             </p>
