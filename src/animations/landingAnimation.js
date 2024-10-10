@@ -619,7 +619,8 @@ export const landingAnimation = (bannerRef) => {
       duration: 1,
       stagger: 0.1,
       ease: 'expo.out',
-    }, "<+=0.5"
+    },
+    '<+=0.5'
   )
   panaTl.fromTo(
     '.bigLogoSectionLaptop',

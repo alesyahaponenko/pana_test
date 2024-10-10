@@ -14,8 +14,6 @@ const LaptopSection = () => {
     setFill(resolvedTheme === 'dark' ? '#282828' : '#d9d9d9')
   }, [resolvedTheme, setCurrentTheme, setFill])
 
-  const isDarkTheme = resolvedTheme === 'dark'
-
   return (
     <section className="bigLogoSection relative m-auto flex h-screen w-screen justify-center px-4 pt-16 sm:items-center xl:px-0">
       <div className="bigLogoSectionSvg absolute left-1/2 top-0 flex h-[250px] w-full max-w-[1200px] -translate-x-1/2 items-center justify-center overflow-hidden px-4 sm:px-10 md:h-[298px] xl:h-[454px]">
