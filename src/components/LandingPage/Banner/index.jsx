@@ -53,7 +53,6 @@ const Banner = ({ onAnimationComplete }) => {
         className="bannerSection relative flex h-[80vh] w-full flex-col items-center justify-center rounded-[20px] py-10 dark:bg-transparent sm:mt-[100px] sm:h-auto lg:mx-0"
       >
         <div className="mb-[3rem] flex w-full flex-col items-center justify-center gap-5 md:mb-[8rem]">
-       
           <h1 className="bigBanner w-full max-w-[90vw] text-center font-aspekta text-[60px] font-semibold leading-[36.4px] dark:text-white sm:max-w-[806px] sm:text-[3rem] sm:leading-[4.5rem] md:text-[4.5rem] md:leading-[6rem]">
             Created for <br className="hidden sm:block" />
             ambitious <br className="block sm:hidden" />
