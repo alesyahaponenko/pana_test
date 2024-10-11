@@ -27,7 +27,7 @@ const CanvasBlock = () => {
   }, [])
 
   return (
-    <div className="canvasWrapSection pointer-events-none fixed left-0 top-0 h-screen w-screen">
+    <div className="canvasWrapSection pointer-events-none fixed left-0 top-0 h-screen w-full">
       <Canvas dpr={[1, 2]}>
         <Suspense fallback={null}>
           <Laptop />

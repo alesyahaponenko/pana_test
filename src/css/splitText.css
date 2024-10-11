@@ -1,10 +1,10 @@
 .bigBanner .split-line {
   overflow-y: hidden;
-  line-height: 0.9;
+  line-height: 1;
   transform: translate(0px, 150px);
 }
 .bigBanner .split-line:nth-child(n) {
-  margin-top: 1.6rem;
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 576px) {

@@ -21,7 +21,7 @@ const BusinessToolset = () => {
   }
 
   return (
-    <section className="pinBusinessToolset relative mx-auto mb-10 h-auto w-full max-w-[1200px] px-4 pt-20 sm:mb-40 xl:px-0">
+    <section className="pinBusinessToolset relative mx-auto mb-10 h-auto w-full max-w-[1400px] px-4 pt-20 sm:mb-40 lg:px-10">
       <h2 className="btHeader text-center font-aspekta text-[1.5rem] font-semibold leading-[2rem] text-carbonBlack dark:text-white md:text-left md:text-[2rem] md:leading-[2.5rem] lg:max-w-[895px] lg:text-[3.5rem] lg:leading-[4rem]">
         <span className="text-green">One tool provides</span> <br className="block sm:hidden" />
         everything you need to handle your digital sales business

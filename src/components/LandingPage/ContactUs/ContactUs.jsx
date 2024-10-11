@@ -3,8 +3,8 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <section className="relative m-auto flex w-full justify-center xl:px-0">
-      <div className="relative flex w-full flex-col justify-center gap-10 bg-green px-5 pb-[52px] pt-[44px] md:px-[60px] lg:py-20">
+    <section className="relative m-auto flex w-full justify-center bg-green xl:px-0">
+      <div className="relative flex w-full max-w-[1400px] flex-col justify-center gap-10 px-5 pb-[52px] pt-[44px] md:px-10 lg:py-20">
         <div className="flex gap-2">
           <div className="grid size-[52px] place-content-center rounded-full bg-black">
             <Image src={'/static/favicons/a-logo.svg'} alt="Logo a" width={26} height={26} />

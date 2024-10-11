@@ -18,7 +18,7 @@ const HomeLanding = () => {
 
   return (
     <RemoveScroll enabled={isScrollLocked}>
-      <div className="relative min-w-full max-w-[1200px]">
+      <div className="relative min-w-full max-w-[1400px]">
         <Banner onAnimationComplete={handleAnimationComplete} />
         <BusinessToolset />
         <B2BBC />

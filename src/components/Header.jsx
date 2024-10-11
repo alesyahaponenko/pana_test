@@ -75,19 +75,22 @@ const Header = () => {
 
   return (
     <header className={`h-screen px-6 py-5 xl:px-0`} ref={headerRef}>
-      <div
-        className="logoPreLoad fixed left-0 top-0 z-50 h-screen w-screen"
-        ref={logoPreLoadWrapRef}
-      >
+      <div className="logoPreLoad fixed left-0 top-0 z-50 h-screen w-full" ref={logoPreLoadWrapRef}>
         <div className="absolute left-1/2 top-1/2 flex w-[30vw] -translate-x-1/2 -translate-y-1/2">
           <Logo fill={fill} ref={logoPreLoadRef} />
         </div>
       </div>
-      <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between">
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between lg:px-10">
         <div className="relative flex w-[100px] items-center justify-center">
           <LogoHeader fill={fill} ref={logoRef} />
         </div>
-        <nav className="restHide left-1/2 hidden -translate-x-1/2 gap-10 opacity-0 md:absolute md:flex md:justify-center"></nav>
+        <div className="restHide left-1/2 hidden -translate-x-1/2 gap-10 opacity-0 md:absolute md:flex md:justify-center">
+          <div className="smallBanner hidden overflow-hidden rounded-full bg-darkGray px-5 py-3 dark:bg-carbonBlack sm:block">
+            <span className="font-inter text-[16px] font-medium leading-[20.8px] text-carbonBlack dark:text-darkGray">
+              Managing a business effectively
+            </span>
+          </div>
+        </div>
         <div className="restHide relative z-10 flex w-full max-w-[350px] items-center justify-end gap-2 opacity-0">
           <ThemeSwitch />
           <GreenButton
@@ -97,7 +100,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="restHide opacity-0 md:hidden">
+        <div className="restHide hidden opacity-0 md:hidden">
           {/* <Hamburger toggled={isOpen} toggle={setIsOpen} color={isDarkTheme ? 'white' : 'black'} /> */}
         </div>
       </div>

@@ -221,7 +221,7 @@ const B2BBC = () => {
   return (
     <section
       ref={blockRef}
-      className="sectionB2BBC relative mx-auto w-full max-w-[1200px] px-4 sm:mb-[20vh] xl:px-0"
+      className="sectionB2BBC relative mx-auto w-full max-w-[1400px] px-4 sm:mb-[20vh] lg:px-10"
     >
       <h2 className="b2bcHeader mx-auto max-w-[310px] text-center font-aspekta text-[1.5rem] font-semibold leading-[2rem] text-carbonBlack dark:text-white sm:mb-40 md:max-w-[590px] md:text-[2rem] md:leading-[2.5rem] lg:text-[3.5rem] lg:leading-[4.2rem]">
         Next generation of <br />

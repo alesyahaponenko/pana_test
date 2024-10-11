@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className="relative z-50 bg-[#E9E9E9] px-4 py-[44px] pb-5 text-white dark:bg-carbonBlack sm:pt-20 xl:px-0">
-      <div className="mx-auto flex max-w-[1200px] flex-col justify-between space-y-10 md:items-center lg:flex-row lg:items-start lg:space-x-10 lg:space-y-0">
+      <div className="mx-auto flex max-w-[1400px] flex-col justify-between space-y-10 md:items-center lg:flex-row lg:items-start lg:space-x-10 lg:space-y-0 lg:px-10">
         {/* Left Side: Text and Logo */}
         <div className="flex flex-col md:text-center lg:items-start lg:text-left">
           <p className="max-w-[608px] font-aspekta text-[18px] font-semibold leading-[27px] text-black dark:text-white sm:text-[32px] sm:leading-[44.8px] md:max-w-[400px] md:text-[24px] md:leading-[33.6px]">
@@ -37,7 +37,7 @@ export default function Footer() {
           </button>
         </div>
       </div>
-      <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-10 pb-5 pt-[60px] md:gap-0">
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-10 pb-5 pt-[60px] md:gap-0 lg:px-10">
         <div className="logoFooter w-[100px] sm:hidden md:flex">
           <svg
             x="0"
@@ -101,7 +101,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-between gap-2 border-t border-white pb-0 pt-5 dark:border-carbonBlack sm:flex-row sm:gap-0 sm:py-5">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-2 border-t border-white pb-0 pt-5 dark:border-carbonBlack sm:flex-row sm:gap-0 sm:py-5 lg:px-10">
         {/* Copyright */}
         <div className="font-aspekta text-[14px] leading-[20px] text-link">
           &copy; 2024, Pana. All rights reserved

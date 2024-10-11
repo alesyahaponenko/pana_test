@@ -18,8 +18,8 @@ const LaptopSection = () => {
   }, [resolvedTheme, setCurrentTheme, setFill])
 
   return (
-    <section className="bigLogoSection pointer-events-none fixed left-0 top-0 z-50 m-auto flex h-screen w-screen items-center justify-center px-4 pt-16 xl:px-0">
-      <div className="bigLogoSectionSvg relative flex h-[120px] w-full max-w-[1200px] items-center justify-center px-4 sm:px-10 md:h-[298px] xl:h-[454px]">
+    <section className="bigLogoSection pointer-events-none fixed left-0 top-0 z-50 m-auto flex h-screen w-full items-center justify-center px-4 pt-16 xl:px-0">
+      <div className="bigLogoSectionSvg relative flex h-[120px] w-full max-w-[1400px] items-center justify-center px-4 sm:px-10 md:h-[298px] lg:px-10 xl:h-[454px]">
         <svg x="0" y="0" enableBackground="new 0 0 930 358" viewBox="0 0 930 358" className="">
           <g className="litAnim opacity-0" fill={fill}>
             <path d="M271.3 135.7c0 74.9-60.8 135.7-135.7 135.7S-.1 210.6-.1 135.7 60.7 0 135.6 0s135.7 60.8 135.7 135.7zm-51.8 0c0-46.3-37.6-83.9-83.9-83.9-46.4 0-83.9 37.6-83.9 83.9 0 1.4 0 2.9.1 4.3 2.2 44.3 38.9 79.6 83.8 79.6 46.4 0 83.9-37.6 83.9-83.9z"></path>

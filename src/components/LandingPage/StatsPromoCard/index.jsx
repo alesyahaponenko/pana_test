@@ -22,7 +22,7 @@ const StatsPromoCard = () => {
   const isDarkTheme = resolvedTheme === 'dark'
 
   return (
-    <section className="statsPromoCard mx-auto mb-20 mt-40 w-full max-w-[1200px] bg-[#E9E9E9] p-4 dark:bg-[#17171799] sm:mt-20 md:rounded-[30px] md:py-[108px] lg:p-[120px] lg:pb-[164px]">
+    <section className="statsPromoCard mx-auto mb-20 mt-40 w-full max-w-[1400px] bg-[#E9E9E9] p-4 dark:bg-[#17171799] sm:mt-20 md:rounded-[30px] md:py-[108px] lg:p-[120px] lg:px-10 lg:pb-[164px]">
       <div className="mb-20 flex flex-col gap-10">
         <h2 className="statsPromoCardTitle mx-auto max-w-[486px] text-center font-aspekta text-[1.5rem] font-medium leading-[2rem] text-black dark:text-white md:text-[32px] md:font-semibold md:leading-[44.8px] lg:max-w-[985px] lg:text-[2.3rem] lg:leading-[3.4rem]">
           Get live statistics and <span className="text-green">recommended sale</span> strategies
@@ -53,7 +53,7 @@ const StatsPromoCard = () => {
             </p>
           </div>
           <div className="greenButtonWrap h-full w-full">
-            <div className="greenButton flex h-full w-full justify-center lg:justify-start">
+            <div className="greenButton flex h-full w-full justify-start">
               <GreenButton
                 label={'Subscribe'}
                 className={
