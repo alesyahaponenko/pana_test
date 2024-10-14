@@ -22,6 +22,7 @@ import ThemeSwitch from './ThemeSwitch'
 import { headerAnimation } from '@/animations/headerAnimation'
 import { useHeaderStore } from '@/store/useHeaderStore'
 import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Header = () => {
   const headerRef = useRef()
@@ -51,6 +52,32 @@ const Header = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     // gsap.config({ nullTargetWarn: false }) // dont show warn
+  }, [])
+
+  useEffect(() => {
+    function resizeInit() {
+      ScrollTrigger.refresh()
+    }
+
+    function debounce(func, wait) {
+      let timeout
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout)
+          func(...args)
+        }
+        clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+      }
+    }
+
+    const debouncedResizeInit = debounce(resizeInit, 500)
+
+    window.addEventListener('resize', debouncedResizeInit)
+
+    return () => {
+      window.removeEventListener('resize', debouncedResizeInit)
+    }
   }, [])
 
   useEffect(() => {

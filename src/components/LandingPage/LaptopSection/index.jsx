@@ -62,8 +62,10 @@ const LaptopSection = () => {
           />
         </div>
       </div>
+
+      {/* Tablet version */}
       <div className="bigLogoSectionLaptop relative hidden aspect-[16/9] w-full max-w-[1400px] sm:flex lg:hidden lg:px-10">
-        <div className="absolute inset-[7%_12%_-93%_12%]">
+        <div className="absolute inset-[0%_30%_0%_30%] overflow-hidden">
           <video
             ref={videoRef}
             autoPlay
@@ -76,34 +78,36 @@ const LaptopSection = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="absolute inset-0 h-[80vh]">
+        <div className="absolute inset-0">
           <Image
             src="/static/landing/tablet.png"
             fill
-            alt="Laptop Mockup"
+            alt="Tablet Mockup"
             className="object-contain"
           />
         </div>
       </div>
-      <div className="bigLogoSectionLaptop relative block aspect-[16/9] w-full max-w-[1400px] sm:hidden lg:px-10">
-        <div className="absolute inset-[1%_11%_25%_12%] overflow-hidden">
+
+      {/* Mobile version */}
+      <div className="bdigLogoSectionLaptop relative flex aspect-[16/9] w-full max-w-[250px] sm:hidden">
+        <div className="absolute inset-[5%_0%_5%_0%] overflow-hidden">
           <video
             ref={videoRef}
             autoPlay
             loop
             muted
             playsInline
-            className="h-full w-full rounded-[30px] object-cover"
+            className="h-full w-full scale-[0.98] rounded-[50px] object-cover"
           >
             <source src="/static/landing/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="absolute inset-0 h-[70vh]">
+        <div className="absolute inset-0">
           <Image
             src="/static/landing/phone.png"
             fill
-            alt="Laptop Mockup"
+            alt="Tablet Mockup"
             className="object-contain"
           />
         </div>
