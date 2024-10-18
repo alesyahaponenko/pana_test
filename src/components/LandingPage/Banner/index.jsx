@@ -17,27 +17,27 @@ const Banner = ({ onAnimationComplete }) => {
   const { resolvedTheme } = useThemeHandler()
   const [mounted, setMounted] = useState(false)
 
-  const { animationPlayed } = useHeaderStore()
+  // const { animationPlayed } = useHeaderStore()
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
   useEffect(() => {
-    if (animationPlayed && bannerRef.current) {
+    if (bannerRef.current) {
       const { mainTimeline } = landingAnimation(bannerRef)
 
       mainTimeline.eventCallback('onComplete', () => {
         ScrollTrigger.sort()
         ScrollTrigger.refresh()
-        onAnimationComplete()
+        // onAnimationComplete()
       })
 
       return () => {
         mainTimeline.kill()
       }
     }
-  }, [animationPlayed, onAnimationComplete])
+  }, [])
 
   const getImageSrc = (lightSrc, darkSrc) => {
     if (!mounted) return lightSrc
@@ -50,15 +50,14 @@ const Banner = ({ onAnimationComplete }) => {
     <>
       <section
         ref={bannerRef}
-        className="bannerSection relative flex h-[80vh] w-full flex-col items-center justify-center rounded-[20px] py-10 dark:bg-transparent sm:mt-[100px] sm:h-auto lg:mx-0"
+        className="bannerSection relative flex h-[80vh] w-full flex-col items-center justify-center rounded-[20px] pb-10 dark:bg-transparent sm:mt-[100px] sm:h-auto lg:mx-0"
       >
         <div className="mb-[3rem] flex w-full flex-col items-center justify-center gap-5 md:mb-[8rem]">
-          <h1 className="bigBanner w-full max-w-[90vw] text-center font-aspekta text-[60px] font-semibold leading-[36.4px] dark:text-white sm:max-w-[806px] sm:text-[3rem] sm:leading-[4.5rem] md:text-[4.5rem] md:leading-[6rem]">
-            Created for <br className="hidden sm:block" />
-            ambitious <br className="block sm:hidden" />
-            <span className="inline-block text-green">e</span>Commerce
-            <br className="hidden sm:block" />
-            businesses
+          <h1 className="bigBanner w-full max-w-[90vw] text-center font-aspekta text-[5px] font-semibold leading-[36.4px] dark:text-white sm:max-w-[806px] sm:text-[3rem] sm:leading-[4rem] md:text-[4rem] md:leading-[4rem]">
+            Created for ambitious <br className="block sm:hidden" />
+            <span className="whitespace-nowrap">
+              <span className="inline-block text-green">e</span>Commerce businesses
+            </span>
           </h1>
         </div>
         {/* <div className="relative m-auto hidden h-screen w-[90%] justify-center">
@@ -73,7 +72,8 @@ const Banner = ({ onAnimationComplete }) => {
           />
         </div> */}
         <div className="dashboardPin relative hidden w-full sm:flex">
-          <div className="dashboard relative mx-auto flex w-[95%] justify-center lg:w-[75vw] lg:max-w-[1920px]">
+          <div className="dashboard relative mx-auto flex w-[95%] justify-center lg:w-[90%] lg:max-w-[804px]">
+            <div className="blurDiv fixed bottom-0 left-0 z-[999] h-[15vh] w-full bg-gradient-to-t from-[#ededed] via-[#ededed] to-transparent dark:from-[#000] dark:via-[#000]"></div>
             <div className="relative h-0 w-full p-[37.8%]">
               <div className="">
                 <Image

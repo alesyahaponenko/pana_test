@@ -12,20 +12,21 @@ export const headerAnimation = (
   onComplete
 ) => {
   const tl = gsap.timeline()
+  const tl_header = gsap.timeline({ scrollTrigger: { once: true } })
   const duration = 1.5
   const stagger = 0.2
   const ease = 'expo.inOut'
 
   new SplitText('.bigBanner', { type: 'lines', linesClass: 'split-line' })
 
-  tl.to(logoPreLoadRef.current.querySelectorAll('.lit'), {
+  tl_header.to(logoPreLoadRef.current.querySelectorAll('.lit'), {
     opacity: 1,
     stagger: stagger,
     duration: duration,
     ease: ease,
   })
 
-  tl.to(
+  tl_header.to(
     logoPreLoadRef.current.querySelectorAll('.lit'),
     {
       opacity: 0,
@@ -35,7 +36,7 @@ export const headerAnimation = (
     },
     '<+=1'
   )
-  tl.to(
+  tl_header.to(
     logoPreLoadRef.current.querySelector('.greenPoint'),
     {
       opacity: 1,
@@ -44,7 +45,7 @@ export const headerAnimation = (
     },
     '<+=0.5'
   )
-  tl.to(
+  tl_header.to(
     logoPreLoadRef.current.querySelectorAll('.lit'),
     {
       opacity: 1,
@@ -54,7 +55,7 @@ export const headerAnimation = (
     },
     '<+=1'
   )
-  tl.to(
+  tl_header.to(
     logoPreLoadRef.current.querySelectorAll('.lit'),
     {
       fill: '#3AB54B',
@@ -64,7 +65,7 @@ export const headerAnimation = (
     },
     '<+=0.8'
   )
-  tl.to(
+  tl_header.to(
     logoPreLoadRef.current.querySelectorAll('.lit'),
     {
       fill: fill,
@@ -74,7 +75,7 @@ export const headerAnimation = (
     },
     '<+=0.4'
   )
-  tl.to(
+  tl_header.to(
     logoPreLoadRef.current.querySelectorAll('.lit'),
     {
       opacity: 0,
@@ -84,7 +85,7 @@ export const headerAnimation = (
     },
     '<+=1'
   )
-  tl.to(
+  tl_header.to(
     logoPreLoadRef.current.querySelector('.greenPoint'),
     {
       opacity: 0,

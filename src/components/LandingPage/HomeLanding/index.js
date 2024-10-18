@@ -5,21 +5,23 @@ import BusinessToolset from '@/components/LandingPage/BusinessToolset'
 import ContactUs from '@/components/LandingPage/ContactUs/ContactUs'
 import LaptopSection from '@/components/LandingPage/LaptopSection'
 import NewsletterModal from '@/components/UI/Modals/NewsletterModal'
-import { useState } from 'react'
-import { RemoveScroll } from 'react-remove-scroll'
+// import { useState } from 'react'
+// import { RemoveScroll } from 'react-remove-scroll'
 import StatsPromoCard from '@/components/LandingPage/StatsPromoCard'
+import LiquidShader from '../LiquidShader'
 
 const HomeLanding = () => {
-  const [isScrollLocked, setIsScrollLocked] = useState(true)
+  // const [isScrollLocked, setIsScrollLocked] = useState(true)
 
-  const handleAnimationComplete = () => {
-    setIsScrollLocked(false)
-  }
+  // const handleAnimationComplete = () => {
+  //   setIsScrollLocked(false)
+  // }
 
   return (
-    <RemoveScroll enabled={isScrollLocked}>
-      <div className="relative min-w-full max-w-[1400px]">
-        <Banner onAnimationComplete={handleAnimationComplete} />
+    <>
+      <LiquidShader />
+      <div className="relative m-auto min-w-full max-w-[1440px] px-6 py-5 lg:px-10 xl:px-20">
+        <Banner />
         <BusinessToolset />
         <B2BBC />
         <LaptopSection />
@@ -27,9 +29,8 @@ const HomeLanding = () => {
         <ContactUs />
       </div>
       {/* <Laptop3dSection /> */}
-      <div className="blurDiv fixed bottom-0 left-0 z-[999] h-[15vh] w-full bg-gradient-to-t from-[#ededed] via-[#ededed] to-transparent dark:from-[#000] dark:via-[#000]"></div>
       <NewsletterModal />
-    </RemoveScroll>
+    </>
   )
 }
 export default HomeLanding

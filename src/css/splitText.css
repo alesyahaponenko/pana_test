@@ -4,12 +4,12 @@
   transform: translate(0px, 150px);
 }
 .bigBanner .split-line:nth-child(n) {
-  margin-top: 1rem;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 576px) {
   .bigBanner .split-line:nth-child(2) {
-    margin-top: 1rem;
+    margin-top: 10px;
   }
 }
 

@@ -37,11 +37,11 @@ const Header = () => {
     isOpen,
     currentTheme,
     fill,
-    animationPlayed,
+    // animationPlayed,
     setIsOpen,
     setCurrentTheme,
     setFill,
-    onAnimationComplete,
+    // onAnimationComplete,
   } = useHeaderStore()
 
   useEffect(() => {
@@ -81,34 +81,37 @@ const Header = () => {
   }, [])
 
   useEffect(() => {
-    if (!animationPlayed) {
-      const animation = headerAnimation(
-        headerRef,
-        logoRef,
-        logoPreLoadRef,
-        logoPreLoadWrapRef,
-        fill,
-        () => {
-          onAnimationComplete()
-        }
-      )
-      return () => {
-        animation.kill()
-      }
+    // if (!animationPlayed) {
+    const animation = headerAnimation(
+      headerRef,
+      logoRef,
+      logoPreLoadRef,
+      logoPreLoadWrapRef,
+      fill
+      // () => {
+      //   onAnimationComplete()
+      // }
+    )
+    return () => {
+      animation.kill()
     }
-  }, [animationPlayed, fill, onAnimationComplete])
+    // }
+  }, [fill])
 
   const isDarkTheme = currentTheme === 'dark'
 
   return (
-    <header className={`h-screen px-6 py-5 xl:px-0`} ref={headerRef}>
+    <header
+      className={`m-auto h-screen max-w-[1440px] px-6 py-5 lg:px-10 xl:px-20`}
+      ref={headerRef}
+    >
       <div className="logoPreLoad fixed left-0 top-0 z-50 h-screen w-full" ref={logoPreLoadWrapRef}>
         <div className="absolute left-1/2 top-1/2 flex w-[30vw] -translate-x-1/2 -translate-y-1/2">
           <Logo fill={fill} ref={logoPreLoadRef} />
         </div>
       </div>
-      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between lg:px-10">
-        <div className="relative flex w-[100px] items-center justify-center">
+      <div className="mx-auto flex w-full items-center justify-between lg:px-10">
+        <div className="relative flex w-[90px] items-center justify-center">
           <LogoHeader fill={fill} ref={logoRef} />
         </div>
         <div className="restHide left-1/2 hidden -translate-x-1/2 gap-10 opacity-0 md:absolute md:flex md:justify-center">
