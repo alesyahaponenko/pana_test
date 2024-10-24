@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProviders } from './theme-providers'
+import { Providers } from './providers'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -49,11 +50,13 @@ export default function RootLayout({ children }) {
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       <body className="bg-[#E9E9E9]/80 text-black antialiased dark:bg-[#000000]">
-        <ThemeProviders>
-          <Header />
-          <main className="mx-auto w-full overflow-x-hidden">{children}</main>
-          <Footer />
-        </ThemeProviders>
+        <Providers>
+          <ThemeProviders>
+            <Header />
+            <main className="mx-auto w-full overflow-x-hidden">{children}</main>
+            <Footer />
+          </ThemeProviders>
+        </Providers>
       </body>
     </html>
   )

@@ -17,42 +17,72 @@ import {
   DrawerTrigger,
 } from '@/components/UI/drawer'
 import clsx from 'clsx'
-import useModalStore from '@/store/useModalStore'
 import ThemeSwitch from './ThemeSwitch'
+import { useThemeHandler } from '@/hooks/useThemeHandler'
 import { headerAnimation } from '@/animations/headerAnimation'
-import { useHeaderStore } from '@/store/useHeaderStore'
-import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import {
+  setCurrentTheme,
+  setIsInitialAnimation,
+  setIsScrollLocked,
+} from '@/store/slices/headerSlice'
+import { openModal } from '@/store/slices/modalSlice'
 
 const Header = () => {
   const headerRef = useRef()
   const logoRef = useRef()
   const logoPreLoadRef = useRef()
   const logoPreLoadWrapRef = useRef()
-
+  const dispatch = useAppDispatch()
   const { resolvedTheme } = useThemeHandler()
-  const { openModal } = useModalStore()
 
-  const {
-    isOpen,
-    currentTheme,
-    fill,
-    // animationPlayed,
-    setIsOpen,
-    setCurrentTheme,
-    setFill,
-    // onAnimationComplete,
-  } = useHeaderStore()
+  const { currentTheme, fill, isInitialAnimation } = useAppSelector((state) => state.header)
+  const { isModalOpen } = useAppSelector((state) => state.modal.isModalOpen)
 
   useEffect(() => {
-    setCurrentTheme(resolvedTheme)
-    setFill(resolvedTheme === 'dark' ? '#FFFFFF' : '#000000')
-  }, [resolvedTheme, setCurrentTheme, setFill])
+    dispatch(setCurrentTheme(resolvedTheme))
+  }, [resolvedTheme, dispatch])
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    // gsap.config({ nullTargetWarn: false }) // dont show warn
-  }, [])
+
+    if (
+      !headerRef.current ||
+      !logoRef.current ||
+      !logoPreLoadRef.current ||
+      !logoPreLoadWrapRef.current
+    ) {
+      return
+    }
+
+    const { tl_header, tl } = headerAnimation(
+      headerRef,
+      logoRef,
+      logoPreLoadRef,
+      logoPreLoadWrapRef,
+      fill
+    )
+
+    tl.play()
+
+    // if (isInitialAnimation) {
+    //   dispatch(setIsScrollLocked(true))
+    //   tl_header.play()
+    //   tl.eventCallback('onComplete', () => {
+    //     dispatch(setIsScrollLocked(false))
+    //     dispatch(setIsInitialAnimation(false))
+    //   })
+    // } else {
+    //   dispatch(setIsScrollLocked(true))
+    //   tl.eventCallback('onComplete', () => dispatch(setIsScrollLocked(false))).restart()
+    // }
+
+    return () => {
+      tl_header?.kill()
+      tl?.kill()
+    }
+  }, [fill])
 
   useEffect(() => {
     function resizeInit() {
@@ -79,24 +109,6 @@ const Header = () => {
       window.removeEventListener('resize', debouncedResizeInit)
     }
   }, [])
-
-  useEffect(() => {
-    // if (!animationPlayed) {
-    const animation = headerAnimation(
-      headerRef,
-      logoRef,
-      logoPreLoadRef,
-      logoPreLoadWrapRef,
-      fill
-      // () => {
-      //   onAnimationComplete()
-      // }
-    )
-    return () => {
-      animation.kill()
-    }
-    // }
-  }, [fill])
 
   const isDarkTheme = currentTheme === 'dark'
 
@@ -126,7 +138,7 @@ const Header = () => {
           <GreenButton
             label={'Subscribe'}
             className={'block hover:bg-green hover:text-white'}
-            onClick={openModal}
+            onClick={() => dispatch(openModal())}
           />
         </div>
 
@@ -135,7 +147,7 @@ const Header = () => {
         </div>
       </div>
 
-      {isOpen && (
+      {isModalOpen && (
         <div
           className={`fixed inset-0 z-50 flex flex-col items-center ${
             isDarkTheme ? 'bg-menuBg' : 'bg-white'
@@ -144,8 +156,8 @@ const Header = () => {
           <div className="flex w-full justify-between p-6">
             <Logo fill={fill} />
             <Hamburger
-              toggled={isOpen}
-              toggle={setIsOpen}
+              toggled={isModalOpen}
+              toggle={() => dispatch(openModal())}
               color={isDarkTheme ? ' white' : ' black'}
             />
           </div>

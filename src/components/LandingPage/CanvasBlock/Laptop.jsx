@@ -5,7 +5,7 @@ import StatsPromoCard from '../StatsPromoCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useHeaderStore } from '@/store/useHeaderStore'
-import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
+import { useThemeHandler } from '@/hooks/useThemeHandler'
 
 export default function Laptop({ ...props }) {
   const { animationPlayed } = useHeaderStore()

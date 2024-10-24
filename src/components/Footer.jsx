@@ -3,10 +3,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { useHeaderStore } from '@/store/useHeaderStore'
+import { useAppSelector } from '@/store/hooks'
 
 export default function Footer() {
-  const { fill } = useHeaderStore()
+  const fill = useAppSelector((state) => state.header.fill)
 
   return (
     <footer className="relative z-50 bg-[#E9E9E9] px-4 py-[44px] pb-5 text-white dark:bg-carbonBlack sm:pt-20 xl:px-0">

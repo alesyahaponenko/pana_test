@@ -1,4 +1,4 @@
-import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
+import { useThemeHandler } from '@/hooks/useThemeHandler'
 import gsap from 'gsap'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -223,11 +223,7 @@ const B2BBC = () => {
       ref={blockRef}
       className="sectionB2BBC relative mx-auto w-full max-w-[1400px] px-4 sm:mb-[20vh] lg:px-10"
     >
-      <h2 className="b2bcHeader mx-auto max-w-[310px] text-center font-aspekta text-[1.5rem] font-semibold leading-[2rem] text-carbonBlack dark:text-white sm:mb-40 md:max-w-[590px] md:text-[2rem] md:leading-[2.5rem] lg:text-[3.5rem] lg:leading-[4.2rem]">
-        Next generation of <br />
-        <span className="text-green">B2B2C</span> <br />
-        digital sales business
-      </h2>
+     
       <div className="cardsOrdersWrap relative">
         <div className="cardsOrders grid-rows-auto relative mx-auto mt-[55px] grid max-w-[380px] grid-cols-1 gap-x-[20px] gap-y-[20px] md:mx-0 md:max-w-full md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-1">
           <div

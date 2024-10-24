@@ -1,12 +1,13 @@
 'use client'
 import GreenButton from '@/components/UI/Buttons/GreenButton'
-import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
-import useModalStore from '@/store/useModalStore'
+import { useThemeHandler } from '@/hooks/useThemeHandler'
+import { useAppDispatch } from '@/store/hooks'
+import { openModal } from '@/store/slices/modalSlice'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const StatsPromoCard = () => {
-  const { openModal } = useModalStore()
+  const dispatch = useAppDispatch()
   const { resolvedTheme } = useThemeHandler()
   const [mounted, setMounted] = useState(false)
 
@@ -15,7 +16,7 @@ const StatsPromoCard = () => {
   }, [])
 
   const getImageSrc = (lightSrc, darkSrc) => {
-    if (!mounted) return lightSrc
+    if (!mounted) return resolvedTheme === 'dark' ? darkSrc : lightSrc
     return isDarkTheme ? darkSrc : lightSrc
   }
 
@@ -59,7 +60,7 @@ const StatsPromoCard = () => {
                 className={
                   'max-w-[157px] border border-transparent bg-green text-white hover:border hover:border-green hover:bg-transparent hover:text-black hover:dark:text-white'
                 }
-                onClick={openModal}
+                onClick={() => dispatch(openModal())}
               />
             </div>
           </div>

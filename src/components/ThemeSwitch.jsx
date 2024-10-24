@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
+import { useThemeHandler } from '@/hooks/useThemeHandler'
 
 const Sun = () => (
   <svg

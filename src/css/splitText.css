@@ -34,3 +34,15 @@ canvas {
 .split-line {
   line-height: 1.3;
 }
+
+
+.line-wrapper {
+  overflow: hidden;
+  padding: 0.1em 0;
+}
+
+.titleAnimated {
+  will-change: transform;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}

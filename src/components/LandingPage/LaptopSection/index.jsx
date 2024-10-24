@@ -1,18 +1,20 @@
 'use client'
-import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
-import { useHeaderStore } from '@/store/useHeaderStore'
+import { useThemeHandler } from '@/hooks/useThemeHandler'
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { setCurrentTheme, setFill } from '@/store/slices/headerSlice'
 
 const LaptopSection = () => {
   const { resolvedTheme } = useThemeHandler()
-  const { fill, setCurrentTheme, setFill } = useHeaderStore()
+  const dispatch = useAppDispatch()
+  const fill = useAppSelector((state) => state.header.fill)
   const videoRef = useRef(null)
 
   useEffect(() => {
-    setCurrentTheme(resolvedTheme)
-    setFill(resolvedTheme === 'dark' ? '#fff' : '#d9d9d9')
-  }, [resolvedTheme, setCurrentTheme, setFill])
+    dispatch(setCurrentTheme(resolvedTheme))
+    dispatch(setFill(resolvedTheme === 'dark' ? '#fff' : '#d9d9d9'))
+  }, [resolvedTheme, dispatch])
 
   return (
     <section className="bigLogoSection relative flex h-screen w-full justify-center px-4 pt-16 sm:items-center xl:px-0">

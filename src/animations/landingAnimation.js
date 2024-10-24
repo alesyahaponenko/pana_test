@@ -12,87 +12,96 @@ export const landingAnimation = (bannerRef) => {
 
   ScrollTrigger.create({
     trigger: '.bannerSection',
-    start: `top top`,
+    start: `top top+=200`,
     end: () => (window.innerWidth > 1024 ? '+=80%' : '+=40%'),
     scrub: 3,
     animation: banert1,
-    fastScrollEnd: true,
     // markers: true,
   })
 
-  banert1.fromTo(
-    '.smallBanner',
-    { scale: 1 },
-    {
-      scale: 0,
-      blur: 0,
-      duration: 1.5,
-      ease: 'expo.inOut',
-    },
-    0
-  )
-  banert1.to(
-    '.bigBanner .split-line .split-line',
-    {
-      y: 150,
-      blur: '(20px)',
-      opacity: 0,
-      duration: 1.5,
-      stagger: 0.1,
-      ease: 'expo.inOut',
-    },
-    '<'
-  )
-  banert1.to(
-    '.bigBanner .split-char',
-    { x: 20, opacity: 0, filter: 'blur(20px)', stagger: 0.01, ease: 'expo.inOut', duration: 1 },
-    0
-  )
-  banert1.to(
-    '.smallBanner',
-    { opacity: 0, filter: 'blur(20px)', ease: 'expo.inOut', duration: 1 },
-    0
-  )
+  // banert1.fromTo(
+  //   '.smallBanner',
+  //   { scale: 1 },
+  //   {
+  //     scale: 0,
+  //     blur: 0,
+  //     duration: 1.5,
+  //     ease: 'expo.inOut',
+  //   },
+  //   0
+  // )
+  banert1.to('.bigBanner .split-line .split-line', {
+    y: 150,
+    blur: '(20px)',
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: 'expo.inOut',
+  })
+  banert1.to('.bigBanner .split-char', {
+    x: 20,
+    opacity: 0,
+    filter: 'blur(20px)',
+    stagger: 0.01,
+    ease: 'expo.inOut',
+    duration: 1,
+  })
+  // banert1.to(
+  //   '.smallBanner',
+  //   { opacity: 0, filter: 'blur(20px)', ease: 'expo.inOut', duration: 1 },
+  //   0
+  // )
   banert1.to(
     '.totalUsersBlock',
     {
+      left: '24.2%',
+      top: '15%',
       'will-change': 'transform',
-      left: '26%',
-      top: '14.8%',
+      force3D: true,
       rotation: 0,
-      ease: 'none',
-      duration: 1,
-    },
-    0
-  )
-  banert1.to(
-    '.bannerBlock',
-    {
-      'will-change': 'transform',
-      left: '26%',
-      top: '58%',
-      rotation: 0,
-      ease: 'none',
+      ease: 'expo.out',
       duration: 1,
     },
     0.2
   )
   banert1.to(
-    '.analyticsBlock',
+    '.bannerBlock',
     {
       'will-change': 'transform',
-      left: '68.5%',
-      top: '58%',
+      force3D: true,
+      left: '25.5%',
+      top: '50.5%',
       rotation: 0,
-      ease: 'none',
+      ease: 'expo.out',
       duration: 1,
     },
-    0.4
+    0.5
+  )
+  banert1.to(
+    '.analyticsBlock',
+    {
+      left: '68.5%',
+      top: '58%',
+      'will-change': 'transform',
+      force3D: true,
+      rotation: 0,
+      ease: 'expo.out',
+      duration: 1,
+    },
+    0.3
+  )
+  banert1.to(
+    '.blurDiv',
+    {
+      opacity: 0,
+      duration: 1,
+    },
+    '<'
   )
 
   ScrollTrigger.create({
     trigger: '.dashboardPin',
-    start: `top 50%`,
+    start: `top 40%`,
     end: '+=50%',
     // pin: true,
     // anticipatePin: true,
@@ -200,41 +209,7 @@ export const landingAnimation = (bannerRef) => {
 
   // BusinessToolset Animation
 
-  const header = document.querySelector('.btHeader')
-  const btHeader = new SplitText(header, { type: 'lines', linesClass: 'split-line' })
-
-  btHeader.lines.forEach((line) => {
-    const wrapper = document.createElement('div')
-    wrapper.classList.add('line-wrapper')
-    line.parentNode.insertBefore(wrapper, line)
-    wrapper.appendChild(line)
-  })
-
-  const btlt1 = gsap.timeline({})
   const btlt2 = gsap.timeline({})
-
-  ScrollTrigger.create({
-    trigger: '.btHeader',
-    start: 'top 90%',
-    end: '+=30%',
-    scrub: 3,
-    animation: btlt1,
-    fastScrollEnd: true,
-  })
-
-  btlt1.fromTo(
-    btHeader.lines,
-    {
-      'will-change': 'transform',
-      y: 200,
-    },
-    {
-      y: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'expo.out',
-    }
-  )
 
   const btltArr = document.querySelectorAll('.blurInOut')
   const animTitles = gsap.utils.toArray('.animTitle')
@@ -292,100 +267,83 @@ export const landingAnimation = (bannerRef) => {
   }, [])
 
   // B2BBC Animation
-
-  const b2bcHeader = document.querySelector('.b2bcHeader')
-  const b2bcHeaderSplit = new SplitText(b2bcHeader, { type: 'lines', linesClass: 'split-line' })
-
-  b2bcHeaderSplit.lines.forEach((line) => {
-    const wrapper = document.createElement('div')
-    wrapper.classList.add('line-wrapper')
-    line.parentNode.insertBefore(wrapper, line)
-    wrapper.appendChild(line)
-  })
-
-  gsap.fromTo(
-    b2bcHeaderSplit.lines,
-    {
-      'will-change': 'transform',
-      yPercent: 100,
-    },
-    {
-      ease: 'expo.out',
-      yPercent: 0,
-      stagger: { each: 0.06, from: 'start' },
-      scrollTrigger: {
-        trigger: b2bcHeader,
-        start: `top 80%`,
-        end: `+=30%`,
-        scrub: 3,
-        fastScrollEnd: true,
-      },
-    }
-  )
-
   const b2bctl = gsap.timeline()
 
   let mm = gsap.matchMedia()
 
-  mm.add('(min-width: 568px)', () => {
-    ScrollTrigger.create({
-      trigger: '.cardsOrders',
-      start: `top bottom-=${window.innerHeight * 0.1}`,
-      end: '+=30%',
-      animation: b2bctl,
-      scrub: 3,
-    })
+  // mm.add('(min-width: 1024px)', () => {
+  //   ScrollTrigger.create({
+  //     trigger: '.pinBusinessToolset',
+  //     start: () => {
+  //       const banner = document.querySelector('.bannerSection')
+  //       const titleAnimated = document.querySelector('.titleAnimatedWrap')
+  //       const offset = banner?.offsetHeight + titleAnimated?.offsetHeight || 0
+  //       return `top-=${offset} top`
+  //     },
+  //     end: '+=300%',
+  //     pin: true,
+  //     animation: b2bctl,
+  //     scrub: 3,
+  //     onRefresh: self => {
+  //       const banner = document.querySelector('.bannerSection')
+  //       const titleAnimated = document.querySelector('.titleAnimatedWrap')
+  //       const offset = banner?.offsetHeight + titleAnimated?.offsetHeight || 0
+        
+  //       self.start = `top-=${offset} top`
+  //     },
+  //     markers: true
+  //   })
 
-    b2bctl.fromTo(
-      ['.order-1', '.order-2', '.order-3'],
-      { 'will-change': 'transform', scale: 0.8, yPercent: 20 },
-      {
-        yPercent: 0,
-        scale: 1,
-        duration: 1,
-        ease: 'none',
-      }
-    )
-    b2bctl.fromTo(
-      '.order-1 > div >div',
-      { 'will-change': 'transform', scale: 0.5, opacity: 0, yPercent: 20 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.15,
-        ease: 'none',
-      },
-      '<+=0.2'
-    )
-    b2bctl.fromTo(
-      '.order-2 > p',
-      { 'will-change': 'transform', scale: 0.5, opacity: 0, yPercent: 20 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.15,
-        ease: 'none',
-      },
-      '<'
-    )
-    b2bctl.fromTo(
-      '.order-3 > div',
-      { 'will-change': 'transform', scale: 0.5, opacity: 0, yPercent: 20 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.15,
-        ease: 'none',
-      },
-      '<'
-    )
-  })
+  //   b2bctl.fromTo(
+  //     ['.order-1', '.order-2', '.order-3'],
+  //     { 'will-change': 'transform', scale: 0.8, yPercent: 20 },
+  //     {
+  //       yPercent: 0,
+  //       scale: 1,
+  //       duration: 1,
+  //       ease: 'none',
+  //     }
+  //   )
+  //   b2bctl.fromTo(
+  //     '.order-1 > div >div',
+  //     { 'will-change': 'transform', scale: 0.5, opacity: 0, yPercent: 20 },
+  //     {
+  //       yPercent: 0,
+  //       opacity: 1,
+  //       scale: 1,
+  //       duration: 0.5,
+  //       stagger: 0.15,
+  //       ease: 'none',
+  //     },
+  //     '<+=0.2'
+  //   )
+  //   b2bctl.fromTo(
+  //     '.order-2 > p',
+  //     { 'will-change': 'transform', scale: 0.5, opacity: 0, yPercent: 20 },
+  //     {
+  //       yPercent: 0,
+  //       opacity: 1,
+  //       scale: 1,
+  //       duration: 0.5,
+  //       stagger: 0.15,
+  //       ease: 'none',
+  //     },
+  //     '<'
+  //   )
+  //   b2bctl.fromTo(
+  //     '.order-3 > div',
+  //     { 'will-change': 'transform', scale: 0.5, opacity: 0, yPercent: 20 },
+  //     {
+  //       yPercent: 0,
+  //       opacity: 1,
+  //       scale: 1,
+  //       duration: 0.5,
+  //       stagger: 0.15,
+  //       ease: 'none',
+  //     },
+  //     '<'
+  //   )
+  // })
 
   mm.add('(max-width: 567px)', () => {
     const cards = ['.order-1', '.order-2', '.order-3', '.order-4', '.order-5', '.order-6']
@@ -1007,7 +965,6 @@ export const landingAnimation = (bannerRef) => {
   mainTimeline
     .add(banert1)
     .add(banert2)
-    .add(btlt1)
     .add(btlt2)
     .add(b2bctl)
     .add(b2bctl2)

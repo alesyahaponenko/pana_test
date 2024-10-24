@@ -1,14 +1,15 @@
 import { useTheme } from 'next-themes'
-import { useHeaderStore } from '@/store/useHeaderStore'
+import { useAppDispatch } from '@/store/hooks'
+import { setCurrentTheme, setFill } from '@/store/slices/headerSlice'
 
 export const useThemeHandler = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
-  const { setCurrentTheme, setFill } = useHeaderStore()
+  const dispatch = useAppDispatch()
 
   const handleThemeChange = (newTheme) => {
     setTheme(newTheme)
-    setCurrentTheme(newTheme)
-    setFill(newTheme === 'dark' ? '#FFFFFF' : '#000000')
+    dispatch(setCurrentTheme(newTheme))
+    dispatch(setFill(newTheme === 'dark' ? '#FFFFFF' : '#000000'))
   }
 
   return { theme, resolvedTheme, handleThemeChange }

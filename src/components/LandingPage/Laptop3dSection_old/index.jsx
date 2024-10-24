@@ -1,5 +1,5 @@
 'use client'
-import { useThemeHandler } from '@/lib/hooks/useThemeHandler'
+import { useThemeHandler } from '@/hooks/useThemeHandler'
 import { useHeaderStore } from '@/store/useHeaderStore'
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'

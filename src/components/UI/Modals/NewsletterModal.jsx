@@ -2,12 +2,14 @@
 import React from 'react'
 import GreenButton from '../Buttons/GreenButton'
 import { X } from 'lucide-react'
-import useModalStore from '@/store/useModalStore'
+import { closeModal } from '@/store/slices/modalSlice'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
 
 const NewsletterModal = () => {
-  const { isOpen, closeModal } = useModalStore()
+  const dispatch = useAppDispatch()
+  const isModalOpen = useAppSelector((state) => state.modal.isModalOpen)
 
-  if (!isOpen) return null
+  if (!isModalOpen) return null
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/80 dark:bg-[#000000D0]">
       <div className="relative w-[95%] rounded-[24px] bg-[#262626] p-8 shadow-lg dark:bg-white md:w-[794px]">
@@ -15,7 +17,7 @@ const NewsletterModal = () => {
           <button
             className="absolute right-4 top-4 text-gray-500 hover:text-black"
             aria-label="Close"
-            onClick={closeModal}
+            onClick={() => dispatch(closeModal())}
           >
             <X />
           </button>
